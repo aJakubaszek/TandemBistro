@@ -20,8 +20,10 @@ public class Guest : MonoBehaviour
 
     void Awake(){
         movement = gameObject.GetComponent<NPC>();
+        
     }
-    void Start(){
+    void OnEnable(){
+
         GetTable();
     }
     void OnDisable(){
@@ -34,6 +36,12 @@ public class Guest : MonoBehaviour
     }
 
     private void GetTable(){
+        if (TableManager.Instance == null){
+            StartCoroutine(WaitForTableManager());
+            Debug.Log("Waiting for Table Manager");
+            return;
+        }
+
         table = TableManager.Instance.GetFreeTable();
         if(table != null){
             Vector3 destination = table.GetGuestSpot();
@@ -74,6 +82,7 @@ public class Guest : MonoBehaviour
         }
         else{
             Debug.Log("Niepoprawne zamówienie");
+            gameObject.GetComponent<Renderer>().material.color = Color.red;
             return false;
         }
     }
@@ -84,6 +93,8 @@ public class Guest : MonoBehaviour
         timeWaiting++;
         if(timeWaiting > patience){
             Clock.SecondPassed -= WaitMode;
+            timeWaiting = 0;
+            isWaiting = false;
             Debug.Log("waiting too long");
             if(isSeated){
                 isSeated = false;
@@ -92,7 +103,7 @@ public class Guest : MonoBehaviour
                 table = null;
                 order = null;
             }
-            movement.OnDestinationReached -= (()=> gameObject.SetActive(false)); //Zmienić na punkt na zewnatrz
+            movement.OnDestinationReached += (()=> {gameObject.SetActive(false);}); //Zmienić na punkt na zewnatrz
             Transform exitPoint = TableManager.Instance.GetWaitingPoint();
             movement.GoToDestination(exitPoint.position);
         }
@@ -105,5 +116,12 @@ public class Guest : MonoBehaviour
 
     public Dish GetOrder(){
         return order;
+    }
+
+    private IEnumerator WaitForTableManager(){
+        while(TableManager.Instance == null){
+            yield return null;
+        }
+        GetTable();
     }
 }

@@ -393,7 +393,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   orderTime: 5
   eatingTime: 3
-  patience: 45
+  patience: 15
   isSeated: 0
   isWaiting: 0
   timeWaiting: 0
