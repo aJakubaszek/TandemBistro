@@ -4,10 +4,18 @@ using UnityEngine;
 
 public class TableManager : MonoBehaviour
 {
+    public static TableManager Instance;
 
     [SerializeField] List<Table> freeTables = new List<Table>(); //Serialize potrzebne tylko do debugu
     [SerializeField] List<Table> occupiedTables = new List<Table> ();
+    public Transform waitingPoint;
     void Awake(){
+        if (Instance != null && Instance != this){
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+
         Table[] tables = FindObjectsOfType<Table>();
         foreach (Table table in tables){
             if (table.isOccupied){
@@ -21,7 +29,6 @@ public class TableManager : MonoBehaviour
     }
 
     public Table GetFreeTable(){
-        Debug.Log(freeTables.Count);
         if(freeTables.Count>0){
             int random = Random.Range(0,freeTables.Count);
             Debug.Log("Random: " + random);
@@ -30,6 +37,10 @@ public class TableManager : MonoBehaviour
             return chosenTable;
         }
         else return null;
+    }
+
+    public Transform GetWaitingPoint(){
+        return waitingPoint;
     }
 
 

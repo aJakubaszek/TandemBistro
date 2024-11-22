@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: f32929dec494a174bb1f61221016b5f3
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - defaultCursor: {fileID: 21300000, guid: 8392bf8c14cd1384eac3d54b674d0c74, type: 3}
+  - pickUpCursor: {fileID: 21300000, guid: 333c7f29d7795b8468a3360d558aa12a, type: 3}
+  - putDownCursor: {fileID: 21300000, guid: bd5027d1013115f4c8d0460af4cb9eca, type: 3}
+  - giveCursor: {fileID: 21300000, guid: 7758487a2ff34fe489aaa2450e441c18, type: 3}
+  - trashCursor: {fileID: 21300000, guid: d1465521fce820542bc206237fdcbc67, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

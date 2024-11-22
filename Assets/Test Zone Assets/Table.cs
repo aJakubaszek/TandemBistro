@@ -7,7 +7,7 @@ public class Table : MonoBehaviour
 {
     
     [SerializeField] List<Transform> seats;
-    [SerializeField] Transform tableGuestTransform;
+    [SerializeField] Transform meetingPointTransform;
     public event Action<Table,bool> tableStatusChanged;
     public bool isOccupied { get; private set; } = false;
 
@@ -20,8 +20,13 @@ public class Table : MonoBehaviour
         }
         isOccupied = false;
     }
+    public void SeatGuests(Transform guest){
+        seats = ShuffleList<Transform>(seats);
+        guest.position = seats[0].position;
+
+    }
     public Vector3 GetGuestSpot(){
-        return tableGuestTransform.position;
+        return meetingPointTransform.position;
     }
     private void RemoveGuests(){
         isOccupied = true; //add the rest
