@@ -17,7 +17,7 @@ public class Breakable : MonoBehaviour
             gameObject.transform.DetachChildren();
             
             foreach(Transform piece in gameObject.transform){
-                    Rigidbody rb = transform.gameObject.AddComponent(typeof(Rigidbody)) as Rigidbody;
+                    transform.gameObject.GetComponent<Rigidbody>().isKinematic = true;
                     MeshCollider mc = transform.gameObject.GetComponent<MeshCollider>();
                     if(mc != null){
                         mc.enabled = true;
