@@ -9,6 +9,7 @@ TagManager:
   - Tabletop
   - Trash
   - Oven
+  - Knife
   layers:
   - Default
   - TransparentFX
