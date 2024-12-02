@@ -5717,7 +5717,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 059ac900b6897ec46bc8855d058da129, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  breakSpeed: 10000
+  breakSpeed: 5
   breakSound: {fileID: 8300000, guid: b18d93eace55e1d449e39a6e429f4400, type: 3}
 --- !u!54 &1904769047
 Rigidbody:
@@ -5742,7 +5742,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
