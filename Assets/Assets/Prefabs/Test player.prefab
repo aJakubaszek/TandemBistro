@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 2669965175141038857}
   - component: {fileID: 6744767895131967281}
   - component: {fileID: 3240479400824058544}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Test player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -232,7 +232,6 @@ MonoBehaviour:
   holdingPointTransform: {fileID: 5264978561222331137}
   cameraTransform: {fileID: 4418787271141117175}
   maxDistance: 3
-  cursor: {fileID: 0}
 --- !u!1 &2896680315185138470
 GameObject:
   m_ObjectHideFlags: 0
@@ -242,7 +241,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5264978561222331137}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HoldPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -276,7 +275,7 @@ GameObject:
   - component: {fileID: 7637924268751200067}
   - component: {fileID: 29157659417815853}
   - component: {fileID: 1091552723254597067}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pointer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -380,7 +379,7 @@ GameObject:
   - component: {fileID: 4418787271141117175}
   - component: {fileID: 732514520685475089}
   - component: {fileID: 9098289442012422337}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -473,7 +472,7 @@ GameObject:
   - component: {fileID: 6486102818298288228}
   - component: {fileID: 1917798882186997079}
   - component: {fileID: 7135926612424328206}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
