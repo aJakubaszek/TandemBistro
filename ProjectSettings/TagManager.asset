@@ -8,6 +8,7 @@ TagManager:
   - Pickup
   - Tabletop
   - Trash
+  - Oven
   layers:
   - Default
   - TransparentFX

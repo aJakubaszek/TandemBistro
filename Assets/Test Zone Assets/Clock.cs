@@ -7,6 +7,7 @@ public class Clock : MonoBehaviour
 {
     public static Clock Instance{get; private set;}
     public static event Action SecondPassed;
+    public static event Action HalfSecondPassed;
 
     private void Awake(){
         if (Instance != null && Instance != this){
@@ -19,6 +20,7 @@ public class Clock : MonoBehaviour
 
     private void Start(){
         StartCoroutine(CounterOneSecond());
+        StartCoroutine(CounterHalfSecond());
     }
 
     private IEnumerator CounterOneSecond(){
@@ -27,6 +29,11 @@ public class Clock : MonoBehaviour
             SecondPassed?.Invoke();
         }
     }
-    
 
+    private IEnumerator CounterHalfSecond(){
+        while(true){
+            yield return new WaitForSeconds(0.5f);
+            HalfSecondPassed?.Invoke();
+        }
+    }
 }

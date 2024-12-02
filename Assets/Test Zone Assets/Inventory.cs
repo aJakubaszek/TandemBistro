@@ -37,6 +37,10 @@ public class Inventory : MonoBehaviour
                 TrashItem();
             }
         }
+
+    else if (Input.GetKeyDown(KeyCode.Q)){
+        ThrowItem();
+    }
     }
 
 
@@ -86,7 +90,7 @@ public class Inventory : MonoBehaviour
     }
 
     void PutDown(){
-        holdingPointTransform.DetachChildren();
+        LeaveHeldItem();
 
         float objectHeight = heldObject.GetComponent<Collider>().bounds.extents.y;
 
@@ -98,18 +102,38 @@ public class Inventory : MonoBehaviour
         heldObject.transform.SetParent(hit.collider.gameObject.transform);
 
         Rigidbody rb = heldObject.GetComponent<Rigidbody>();
-        //rb.isKinematic = false;
         Collider collider = heldObject.GetComponent<Collider>();
         collider.enabled = true;
 
-        isHoldingItem = false;
-        heldObject = null;
 
     }
 
-    void TrashItem(){
-        Destroy(heldObject);
-        isHoldingItem = false;
+    void ThrowItem(){
+        if(heldObject != null){
+            GameObject obj = heldObject;
+            Rigidbody rb = obj.GetComponent<Rigidbody>();
+            if(rb != null){
+                LeaveHeldItem();
+            
+                Vector3 throwDirection = (cameraTransform.forward + Vector3.up).normalized;
+                rb.isKinematic = false;
+                obj.GetComponent<Collider>().enabled = true;
+                rb.velocity = throwDirection * 5;
+            }
+            else{
+                Debug.LogWarning("Held object has no RiggidBody");
+            }
+            
+        }
+    }
+
+    void LeaveHeldItem(){
+        holdingPointTransform.DetachChildren();
         heldObject = null;
+        isHoldingItem = false;
+    }
+    void TrashItem(){
+        LeaveHeldItem();
+        Destroy(heldObject);
     }
 }
