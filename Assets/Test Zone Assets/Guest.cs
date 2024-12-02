@@ -62,20 +62,21 @@ public class Guest : MonoBehaviour
         }
     }
 
-    private void TakeYourSeat(){
-        Debug.Log("Trying to seat down");
-        //Dodać kilka sekund na myślenie
+    private void TakeYourSeat(){ 
+        Debug.Log("Trying to seat down");//await z myśleniem?
+        
         table.SeatGuests(gameObject.transform);
         isSeated = true;
-        order = DishManager.Instance.GetRandomDish();
+        order = Dish.LoadDishFromData(DishManager.Instance.GetRandomDish());
         Clock.SecondPassed += WaitMode;
         //Display dish image
         
     }
 
-    public bool GiveOrder(GameObject plate){
+    public bool GiveOrder(GameObject plate){//adding points
         Dish givenDish = plate.GetComponent<Dish>();
-        if(givenDish != null && givenDish == order){ //Zmienić na podwójną strukturę
+        bool isCorrectOrder = Dish.AreDishesEqual(givenDish, order);
+        if(givenDish != null && isCorrectOrder){
             Clock.SecondPassed -= WaitMode;
             gameObject.GetComponent<Renderer>().material.color = Color.green;
             return true;
@@ -111,7 +112,7 @@ public class Guest : MonoBehaviour
     }
 
     private void NewOrder(){
-       order = DishManager.Instance.GetRandomDish();
+       order = Dish.LoadDishFromData(DishManager.Instance.GetRandomDish());
     }
 
     public Dish GetOrder(){
@@ -124,4 +125,6 @@ public class Guest : MonoBehaviour
         }
         GetTable();
     }
+
+
 }

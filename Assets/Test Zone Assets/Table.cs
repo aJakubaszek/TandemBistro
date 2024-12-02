@@ -14,14 +14,14 @@ public class Table : MonoBehaviour
 
 
     public void SeatGuests(List<Transform> guests){
-        seats = ShuffleList<Transform>(seats);
+        seats = Algorithms.ShuffleList<Transform>(seats);
         for(int i = 0; i < guests.Count -1; i++){
             guests[i].position = seats[i].position;
         }
         isOccupied = false;
     }
     public void SeatGuests(Transform guest){
-        seats = ShuffleList<Transform>(seats);
+        seats = Algorithms.ShuffleList<Transform>(seats);
         guest.position = seats[0].position;
 
     }
@@ -35,18 +35,5 @@ public class Table : MonoBehaviour
      public void ChangeTableStatus(){
         isOccupied = !isOccupied;
         tableStatusChanged?.Invoke(this,isOccupied);
-    }
-
-
-
-    //wyrzucić to do osobnej klasy
-    private List<T> ShuffleList<T>(List<T> inputList){
-        for (int i = inputList.Count - 1; i > 0; i--){
-            int j = UnityEngine.Random.Range(0, i + 1);
-            T temp = inputList[i];
-            inputList[i] = inputList[j];
-            inputList[j] = temp;
-        }
-        return inputList;
     }
 }

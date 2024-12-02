@@ -3564,11 +3564,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adcbb20073132544db3d378ad9d4305c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dishName: Cube
-  ingredients:
-  - Cube
-  dishImage: {fileID: 0}
-  minimalLevel: 0
+  data:
+    dishName: 
+    ingredients: []
+    dishImage: {fileID: 0}
+    minimalLevel: 0
 --- !u!1 &1039782558
 GameObject:
   m_ObjectHideFlags: 0
@@ -3602,11 +3602,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adcbb20073132544db3d378ad9d4305c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dishName: Sphere
-  ingredients:
-  - Sphere
-  dishImage: {fileID: 0}
-  minimalLevel: 0
+  data:
+    dishName: 
+    ingredients: []
+    dishImage: {fileID: 0}
+    minimalLevel: 0
 --- !u!54 &1039782560
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4806,8 +4806,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allDishes:
-  - {fileID: 1029705088}
-  - {fileID: 1039782559}
+  - dishName: 
+    ingredients: []
+    dishImage: {fileID: 0}
+    minimalLevel: 0
+  - dishName: 
+    ingredients: []
+    dishImage: {fileID: 0}
+    minimalLevel: 0
 --- !u!4 &1363706742
 Transform:
   m_ObjectHideFlags: 0

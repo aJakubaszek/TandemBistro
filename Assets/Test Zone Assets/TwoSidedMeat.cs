@@ -68,9 +68,8 @@ public class TwoSidedMeat : MonoBehaviour
 
     void UpdateTexture(Material updatedMaterial, float secondsCooked){
     float percent = Mathf.Clamp(secondsCooked / cookingTime, 0f, 1f);
-    //Color startingColor = updatedMaterial.color;
     Color startingColor = new Color(1f, 0.49f, 0.49f);
-    Color cookedColor = new Color(0.63f, 0.41f, 0.41f); 
+    Color cookedColor = new Color(0.43f, 0.30f, 0.30f); 
     Color burntColor = Color.black;
 
     Color color;
