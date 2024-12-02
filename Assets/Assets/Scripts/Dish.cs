@@ -9,14 +9,15 @@ public class Dish : MonoBehaviour{
     [SerializeField] DishData data;
     
     [SerializeField] Transform topSnapTransform;
-    [SerializeField] string ingridientName;
+    [SerializeField] List<Ingridient> startingIngridients;
     [SerializeField] Material hoverMaterial;
 
     List<Transform> snappedIngridients;
 
-    XRSocketTagInteractor socketInteractor;
+    [SerializeField] XRSocketTagInteractor socketInteractor;
 
     void Awake(){
+        socketInteractor = gameObject.GetComponent<XRSocketTagInteractor>();
         socketInteractor.targetTag = "Ingridient";
         socketInteractor.attachTransform = topSnapTransform;
         socketInteractor.interactableHoverMeshMaterial = hoverMaterial; //can't potrzebny?
@@ -33,18 +34,21 @@ public class Dish : MonoBehaviour{
         data = newData;
     }
 
-    public static Dish LoadDishFromData(DishData newData){
-        Dish newDish = new Dish();
-        newDish.SetData(newData);
-        return newDish;
-    }
-
-    public static bool AreDishesEqual(Dish firstDish, Dish secondDish){
-        List<string> firstIngridients = firstDish.data.ingredients;
-        List<string> secondIngridients = secondDish.data.ingredients;
+    public static bool AreDishesEqual(DishData firstDish, DishData secondDish){
+        List<string> firstIngridients = firstDish.ingredients;
+        List<string> secondIngridients = secondDish.ingredients;
 
         return firstIngridients.Count == secondIngridients.Count 
         && !firstIngridients.Except(secondIngridients).Any() 
         && !secondIngridients.Except(firstIngridients).Any();
+    }
+    public DishData GetData(){
+        return data;
+    }
+
+    private void LoadDish(List<Ingridient> list){
+        foreach(Ingridient ing in list){
+
+        }
     }
 }

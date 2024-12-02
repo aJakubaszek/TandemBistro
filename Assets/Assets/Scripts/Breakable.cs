@@ -7,21 +7,26 @@ public class Breakable : MonoBehaviour
     [SerializeField] float breakSpeed = 5f;
     [SerializeField] AudioClip breakSound;
     Rigidbody rb;
+    bool plateBroken = false;
 
     void Start(){
         rb = gameObject.GetComponent<Rigidbody>();
     }
 
     private void OnCollisionEnter(Collision other) {
+        if (plateBroken){
+            return;
+        }
         if(other.gameObject.GetComponent<Player>()){
             return;
         }
         if(rb.velocity.magnitude > breakSpeed){
+            plateBroken = true;
             Debug.Log($"Object velocity: {rb.velocity.magnitude}");
             foreach(Transform piece in gameObject.transform){
-                    Rigidbody rb = piece.gameObject.GetComponent<Rigidbody>();
-                    rb.useGravity = true;
-                    rb.isKinematic = false;
+                    Rigidbody rbPiece = piece.gameObject.GetComponent<Rigidbody>();
+                    rbPiece.useGravity = true;
+                    rbPiece.isKinematic = false;
 
                     Vector3 randomDirection = new Vector3(
                     Random.Range(-1f, 1f), // X
@@ -32,7 +37,7 @@ public class Breakable : MonoBehaviour
 
                     rb.AddForce(randomDirection * randomForce, ForceMode.Impulse);
 
-                    MeshCollider mc = piece.gameObject.GetComponent<MeshCollider>();
+                    Collider mc = piece.gameObject.GetComponent<Collider>();
                     if(mc != null){
                         mc.enabled = true;
                     }

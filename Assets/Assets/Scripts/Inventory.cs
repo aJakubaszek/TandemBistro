@@ -26,7 +26,7 @@ public class Inventory : MonoBehaviour
             }
             else if (isHoldingItem && hit.collider.CompareTag("NPC")){
                 Guest guest = hit.collider.gameObject.GetComponent<Guest>();
-                if(guest != null && guest.isSeated && guest.GetOrder() != null){
+                if(guest != null && guest.isSeated && guest.GetOrder().ingredients.Count > 0){
                     if(guest.GiveOrder(heldObject)){
                         isHoldingItem = false;
                         Destroy(heldObject);
@@ -60,7 +60,7 @@ public class Inventory : MonoBehaviour
                 }
                 else if(isHoldingItem && hit.collider.CompareTag("NPC")){
                     Guest guest = hit.collider.gameObject.GetComponent<Guest>();
-                    if(guest != null && guest.isSeated && guest.GetOrder() != null){
+                    if(guest != null && guest.isSeated && guest.GetOrder().ingredients.Count > 0){
                         CursorManager.Instance.SetCursor(CursorManager.Instance.GetGiveCursor());
                     }
                 }

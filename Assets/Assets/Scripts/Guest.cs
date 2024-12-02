@@ -12,7 +12,7 @@ public class Guest : MonoBehaviour
 
     NPC movement;
     Table table;
-    Dish order;
+    DishData order;
     
     public bool isSeated = false; //TBD: State Machine
     public bool isWaiting = false;
@@ -28,7 +28,7 @@ public class Guest : MonoBehaviour
     }
     void OnDisable(){
         table = null;
-        order = null;
+        order = new DishData();
         isSeated = false;
         isWaiting = false;
         timeWaiting = 0;
@@ -67,7 +67,7 @@ public class Guest : MonoBehaviour
         
         table.SeatGuests(gameObject.transform);
         isSeated = true;
-        order = Dish.LoadDishFromData(DishManager.Instance.GetRandomDish());
+        order = DishManager.Instance.GetRandomDish();
         Clock.SecondPassed += WaitMode;
         //Display dish image
         
@@ -75,7 +75,7 @@ public class Guest : MonoBehaviour
 
     public bool GiveOrder(GameObject plate){//adding points
         Dish givenDish = plate.GetComponent<Dish>();
-        bool isCorrectOrder = Dish.AreDishesEqual(givenDish, order);
+        bool isCorrectOrder = Dish.AreDishesEqual(givenDish.GetData(), order);
         if(givenDish != null && isCorrectOrder){
             Clock.SecondPassed -= WaitMode;
             gameObject.GetComponent<Renderer>().material.color = Color.green;
@@ -102,7 +102,7 @@ public class Guest : MonoBehaviour
                 gameObject.transform.position = table.GetGuestSpot();
                 table.ChangeTableStatus();
                 table = null;
-                order = null;
+                order = new DishData();
             }
             movement.OnDestinationReached += (()=> {gameObject.SetActive(false);}); //Zmienić na punkt na zewnatrz
             Transform exitPoint = TableManager.Instance.GetWaitingPoint();
@@ -110,12 +110,11 @@ public class Guest : MonoBehaviour
         }
 
     }
-
     private void NewOrder(){
-       order = Dish.LoadDishFromData(DishManager.Instance.GetRandomDish());
+       order = DishManager.Instance.GetRandomDish();
     }
 
-    public Dish GetOrder(){
+    public DishData GetOrder(){
         return order;
     }
 
