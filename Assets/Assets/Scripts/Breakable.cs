@@ -5,6 +5,7 @@ using UnityEngine;
 public class Breakable : MonoBehaviour
 {
     [SerializeField] float breakSpeed = 5f;
+    [SerializeField] AudioClip breakSound;
     Rigidbody rb;
 
     void Start(){
@@ -14,6 +15,9 @@ public class Breakable : MonoBehaviour
     private void OnCollisionEnter(Collision other) {
         if(rb.velocity.magnitude > breakSpeed){
         gameObject.transform.DetachChildren();
+        if (breakSound != null){
+            AudioSource.PlayClipAtPoint(breakSound, transform.position);
+        }
         Destroy(gameObject);
         }
     }
