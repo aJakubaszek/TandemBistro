@@ -14,11 +14,19 @@ public class Breakable : MonoBehaviour
 
     private void OnCollisionEnter(Collision other) {
         if(rb.velocity.magnitude > breakSpeed){
-        gameObject.transform.DetachChildren();
-        if (breakSound != null){
-            AudioSource.PlayClipAtPoint(breakSound, transform.position);
-        }
-        Destroy(gameObject);
+            gameObject.transform.DetachChildren();
+            
+            foreach(Transform piece in gameObject.transform){
+                    Rigidbody rb = transform.gameObject.AddComponent(typeof(Rigidbody)) as Rigidbody;
+                    MeshCollider mc = transform.gameObject.GetComponent<MeshCollider>();
+                    if(mc != null){
+                        mc.enabled = true;
+                    }
+            }
+            if (breakSound != null){
+                AudioSource.PlayClipAtPoint(breakSound, transform.position);
+            }
+            Destroy(gameObject);
         }
     }
 }
