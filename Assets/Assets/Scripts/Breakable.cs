@@ -25,17 +25,19 @@ public class Breakable : MonoBehaviour
             Debug.Log($"Object velocity: {rb.velocity.magnitude}");
             foreach(Transform piece in gameObject.transform){
                     Rigidbody rbPiece = piece.gameObject.GetComponent<Rigidbody>();
-                    rbPiece.useGravity = true;
-                    rbPiece.isKinematic = false;
+                    if(rbPiece != null){
+                        rbPiece.useGravity = true;
+                        rbPiece.isKinematic = false;
 
-                    Vector3 randomDirection = new Vector3(
-                    Random.Range(-1f, 1f), // X
-                    Random.Range(0.5f, 1f), // Y, aby lekko podbić w górę
-                    Random.Range(-1f, 1f)  // Z
-                    ).normalized;
-                    float randomForce = Random.Range(0f,4f);
+                        Vector3 randomDirection = new Vector3(
+                        Random.Range(-1f, 1f), // X
+                        Random.Range(0.5f, 1f), // Y
+                        Random.Range(-1f, 1f)  // Z
+                        ).normalized;
+                        float randomForce = Random.Range(0f,4f);
 
-                    rb.AddForce(randomDirection * randomForce, ForceMode.Impulse);
+                        rb.AddForce(randomDirection * randomForce, ForceMode.Impulse);
+                    }
 
                     Collider mc = piece.gameObject.GetComponent<Collider>();
                     if(mc != null){

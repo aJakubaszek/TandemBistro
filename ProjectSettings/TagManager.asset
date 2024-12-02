@@ -10,6 +10,7 @@ TagManager:
   - Trash
   - Oven
   - Knife
+  - Ingridient
   layers:
   - Default
   - TransparentFX

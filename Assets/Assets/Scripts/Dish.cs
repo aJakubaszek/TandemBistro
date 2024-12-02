@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -11,23 +12,49 @@ public class Dish : MonoBehaviour{
     [SerializeField] Transform topSnapTransform;
     [SerializeField] List<Ingridient> startingIngridients;
     [SerializeField] Material hoverMaterial;
+    [SerializeField] Collider foodCollider;
 
-    List<Transform> snappedIngridients;
+    List<Transform> snappedIngridients = new List<Transform>();
 
-    [SerializeField] XRSocketTagInteractor socketInteractor;
-
-    void Awake(){
-        socketInteractor = gameObject.GetComponent<XRSocketTagInteractor>();
-        socketInteractor.targetTag = "Ingridient";
-        socketInteractor.attachTransform = topSnapTransform;
-        socketInteractor.interactableHoverMeshMaterial = hoverMaterial; //can't potrzebny?
+    private void Start()
+    {
+        if (startingIngridients != null && startingIngridients.Count > 0)
+        {
+            foreach (var ing in startingIngridients)
+            {
+                AttachIngredient(ing);
+            }
+        }
     }
     
-    
-    void AttatchIngridient(Ingridient ingridient){
-        data.ingredients.Add(ingridient.GetIngridientName());
-        topSnapTransform = ingridient.GetSnapTransform();
-        snappedIngridients.Add(ingridient.gameObject.GetComponent<Transform>());
+    private void OnTriggerEnter(Collider other)
+    {
+        // Sprawdź, czy obiekt to składnik
+        Ingridient ingredient = other.GetComponent<Ingridient>();
+        if (ingredient != null){
+            AttachIngredient(ingredient);
+        }
+    }
+
+    private void AttachIngredient(Ingridient ingredient){
+        data.ingredients.Add(ingredient.GetIngridientName());
+
+        
+
+        Bounds bounds = ingredient.GetComponent<Collider>().bounds;
+        float bottomOffset = bounds.extents.y;
+        var snapTransform = topSnapTransform;
+        Vector3 newPosition = snapTransform.position + new Vector3(0, bottomOffset, 0);
+        ingredient.transform.position = newPosition;
+        ingredient.transform.rotation = snapTransform.rotation;
+
+        Algorithms.TurnOffPhysics(ingredient.gameObject); 
+
+        ingredient.transform.SetParent(transform);
+        snappedIngridients.Add(ingredient.transform);
+
+        topSnapTransform = ingredient.GetSnapTransform();
+        foodCollider.transform.position = topSnapTransform.position;
     }
 
     public void SetData(DishData newData){
@@ -41,6 +68,9 @@ public class Dish : MonoBehaviour{
         return firstIngridients.Count == secondIngridients.Count 
         && !firstIngridients.Except(secondIngridients).Any() 
         && !secondIngridients.Except(firstIngridients).Any();
+    }
+    public static bool IsOrderEqual(DishData firstDish, DishData secondDish){
+        return (firstDish.ingredients.SequenceEqual(secondDish.ingredients));
     }
     public DishData GetData(){
         return data;

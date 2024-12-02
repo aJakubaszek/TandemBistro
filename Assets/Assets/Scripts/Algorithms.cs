@@ -12,4 +12,21 @@ public class Algorithms{
         }
         return inputList;
     }
+
+    public static void TurnOffPhysics(GameObject obj){
+        Rigidbody rb = obj.GetComponent<Rigidbody>();
+        if(rb != null){
+            rb.isKinematic = true;
+            rb.useGravity = false;
+        }
+        obj.GetComponent<Collider>().enabled = false;
+    }
+    public static void TurnOnPhysics(GameObject obj){
+        Rigidbody rb = obj.GetComponent<Rigidbody>();
+        if(rb != null){
+            rb.isKinematic = false;
+            rb.useGravity = true;
+        }
+        obj.GetComponent<Collider>().enabled = true;
+    }
 }
