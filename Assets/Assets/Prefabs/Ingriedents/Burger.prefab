@@ -105,6 +105,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.0129091265, y: 0.012836453, z: 0.016226651}
   m_Center: {x: 0.00017976761, y: 0.00021890039, z: 0.0072729345}
+--- !u!1 &3867335778929227397
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3277656945726206263}
+  m_Layer: 0
+  m_Name: SnapTransform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3277656945726206263
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3867335778929227397}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.097, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9077339214114087571}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5340363378837870764
 GameObject:
   m_ObjectHideFlags: 0
@@ -117,7 +148,8 @@ GameObject:
   - component: {fileID: 4839332620062745666}
   - component: {fileID: 7174232577897777058}
   - component: {fileID: 2194676527435494745}
-  m_Layer: 0
+  - component: {fileID: 7232910815437829193}
+  m_Layer: 2
   m_Name: Burger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -139,6 +171,7 @@ Transform:
   m_Children:
   - {fileID: 4259223316161681920}
   - {fileID: 7455633206120810122}
+  - {fileID: 3277656945726206263}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4839332620062745666
@@ -208,6 +241,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7232910815437829193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5340363378837870764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b16d23dca8030184c9a7e2f1ad21b1eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topSnapTransform: {fileID: 3277656945726206263}
+  ingridientName: Meat
+  isPrepared: 1
 --- !u!1 &5624850414905666931
 GameObject:
   m_ObjectHideFlags: 0
