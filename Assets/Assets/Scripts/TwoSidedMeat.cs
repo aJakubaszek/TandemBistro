@@ -10,12 +10,11 @@ public class TwoSidedMeat : MonoBehaviour
     [SerializeField] float cookingTime = 15f;
     public float topSecondsCooked = 0f;
     public float bottomSecondsCooked = 0f;
-    public Collider touchedOven;
+    Collider touchedOven;
     bool isCooking = false;
 
 
-    [SerializeField] Material cookedMaterial;
-    [SerializeField] Material burntMaterial;
+ 
     Material topMaterial;
     Material bottomMaterial;
 
