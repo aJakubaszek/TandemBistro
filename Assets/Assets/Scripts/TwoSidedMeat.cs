@@ -32,9 +32,7 @@ public class TwoSidedMeat : MonoBehaviour
 
 
     private void OnTriggerEnter(Collider other){
-        Debug.Log("upadek");
         if(other.CompareTag("Oven")){
-            Debug.Log("oven");
             touchedOven = other;
             isCooking = true;
             Clock.HalfSecondPassed += CookSide;
@@ -42,9 +40,7 @@ public class TwoSidedMeat : MonoBehaviour
     }
 
     private void OnTriggerExit(Collider other){
-        Debug.Log("ucieczka");
         if(other.CompareTag("Oven")){
-            Debug.Log("ucieczka oven");
             touchedOven = null;
             isCooking = false;
             Clock.HalfSecondPassed -= CookSide;
