@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seats: []
-  tableGuestTransform: {fileID: 7023383994216753245}
+  meetingPointTransform: {fileID: 0}
 --- !u!1 &1047723924122093793
 GameObject:
   m_ObjectHideFlags: 0

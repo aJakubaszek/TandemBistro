@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class Guest : MonoBehaviour
 {
@@ -9,6 +11,7 @@ public class Guest : MonoBehaviour
     [SerializeField] float orderTime = 5f;
     [SerializeField] float eatingTime = 3f;
     [SerializeField] float patience = 60f;
+    [SerializeField] UnityEngine.UI.Image orderImage;
 
     NPC movement;
     Table table;
@@ -18,8 +21,11 @@ public class Guest : MonoBehaviour
     public bool isWaiting = false;
     public float timeWaiting = 0;
 
+    Collider col;
+
     void Awake(){
         movement = gameObject.GetComponent<NPC>();
+        col = gameObject.GetComponent<Collider>();
         
     }
     void OnEnable(){
@@ -63,13 +69,15 @@ public class Guest : MonoBehaviour
     }
 
     private void TakeYourSeat(){ 
+
         Debug.Log("Trying to seat down");//await z myśleniem?
         
+        movement.TurnOffNavmesh();
         table.SeatGuests(gameObject.transform);
         isSeated = true;
         order = DishManager.Instance.GetRandomDish();
         Clock.SecondPassed += WaitMode;
-        //Display dish image
+        DisplayOrder();
         
     }
 
@@ -79,6 +87,8 @@ public class Guest : MonoBehaviour
         if(givenDish != null && isCorrectOrder){
             Clock.SecondPassed -= WaitMode;
             gameObject.GetComponent<Renderer>().material.color = Color.green;
+            movement.TurnOnNavmesh();
+            HideOrder();
             return true;
         }
         else{
@@ -100,9 +110,11 @@ public class Guest : MonoBehaviour
             if(isSeated){
                 isSeated = false;
                 gameObject.transform.position = table.GetGuestSpot();
+                movement.TurnOnNavmesh();
                 table.ChangeTableStatus();
                 table = null;
                 order = new DishData();
+                HideOrder();
             }
             movement.OnDestinationReached += (()=> {gameObject.SetActive(false);}); //Zmienić na punkt na zewnatrz
             Transform exitPoint = TableManager.Instance.GetWaitingPoint();
@@ -123,6 +135,22 @@ public class Guest : MonoBehaviour
             yield return null;
         }
         GetTable();
+    }
+
+    void DisplayOrder(){
+        if(orderImage != null){
+            orderImage.sprite = order.dishImage;
+            Color cc = orderImage.color;
+            orderImage.color = new Color(cc.r,cc.g,cc.b, 1);
+        }
+    }
+
+    void HideOrder(){
+        if(orderImage != null){
+            orderImage.sprite = null;
+            Color cc = orderImage.color;
+            orderImage.color = new Color(cc.r,cc.g,cc.b, 0);
+        }
     }
 
 

@@ -53,6 +53,18 @@ public class NPC : MonoBehaviour
         return !navMeshAgent.pathPending && navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance;
     }
 
+    public void ResetNavmesh(){
+        navMeshAgent.ResetPath();
+    }
+
+    public void TurnOffNavmesh(){
+        navMeshAgent.enabled = false;
+    }
+
+    public void TurnOnNavmesh(){
+         navMeshAgent.enabled = true;;
+    }
+
 
 
     
