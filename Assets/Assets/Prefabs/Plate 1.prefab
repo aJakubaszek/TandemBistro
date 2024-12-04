@@ -693,7 +693,7 @@ GameObject:
   - component: {fileID: 2068806705529337956}
   - component: {fileID: 937820721045646981}
   - component: {fileID: 3417842498584561333}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SnapCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}

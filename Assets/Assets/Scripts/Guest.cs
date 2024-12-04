@@ -1,10 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
-using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
-using UnityEngine.AI;
-using UnityEngine.UI;
-
 public class Guest : MonoBehaviour
 {
     [Header("Difficulty Settings")]
@@ -74,6 +69,9 @@ public class Guest : MonoBehaviour
         
         movement.TurnOffNavmesh();
         table.SeatGuests(gameObject.transform);
+        float height = gameObject.GetComponent<Collider>().bounds.size.y;
+        transform.position += new Vector3(0, height / 2, 0);
+
         isSeated = true;
         order = DishManager.Instance.GetRandomDish();
         Clock.SecondPassed += WaitMode;

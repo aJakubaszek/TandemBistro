@@ -12,7 +12,6 @@ public class NetworkClientManager : MonoBehaviour{
     [SerializeField] TMP_InputField inputField;
     private void Awake(){
         hostButton.onClick.AddListener(()=>{
-            Debug.Log("woke up");
             NetworkManager.Singleton.StartHost();
         });
         joinButton.onClick.AddListener(()=>{
@@ -21,7 +20,6 @@ public class NetworkClientManager : MonoBehaviour{
     }
 
     private void JoinGame(){
-        Debug.Log("aaaaa");
         UnityTransport transport = NetworkManager.Singleton.GetComponent<UnityTransport>();
         transport.ConnectionData.Address = inputField.text;
         NetworkManager.Singleton.StartClient();

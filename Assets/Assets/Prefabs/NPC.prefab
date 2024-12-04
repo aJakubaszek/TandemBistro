@@ -237,7 +237,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   orderTime: 5
   eatingTime: 3
-  patience: 15
+  patience: 30
   orderImage: {fileID: 3948182075438405878}
   isSeated: 0
   isWaiting: 0

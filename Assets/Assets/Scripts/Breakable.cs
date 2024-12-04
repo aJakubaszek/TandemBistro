@@ -22,7 +22,6 @@ public class Breakable : MonoBehaviour
         }
         if(rb.velocity.magnitude > breakSpeed){
             plateBroken = true;
-            Debug.Log($"Object velocity: {rb.velocity.magnitude}");
             foreach(Transform piece in gameObject.transform){
                     Rigidbody rbPiece = piece.gameObject.GetComponent<Rigidbody>();
                     if(rbPiece != null){

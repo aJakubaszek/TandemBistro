@@ -3349,7 +3349,7 @@ GameObject:
   - component: {fileID: 2701334830659083297}
   - component: {fileID: 6418330316979066975}
   - component: {fileID: 8142016038534522920}
-  - component: {fileID: 1489897761273741324}
+  - component: {fileID: 7771309800415234655}
   m_Layer: 0
   m_Name: Bun
   m_TagString: Untagged
@@ -3437,7 +3437,7 @@ MonoBehaviour:
   pieceTransform: {fileID: 0}
   cutStates: []
   cutPieces: []
---- !u!114 &1489897761273741324
+--- !u!114 &7771309800415234655
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3583,7 +3583,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   m_ThrowVelocityScale: 1.5
   m_ThrowAngularVelocityScale: 1
-  m_ForceGravityOnDetach: 0
+  m_ForceGravityOnDetach: 1
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
   m_StartingSingleGrabTransformers: []

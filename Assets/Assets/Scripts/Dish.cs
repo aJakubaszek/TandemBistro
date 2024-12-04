@@ -18,18 +18,14 @@ public class Dish : MonoBehaviour{
 
     private void Start()
     {
-        if (startingIngridients != null && startingIngridients.Count > 0)
-        {
-            foreach (var ing in startingIngridients)
-            {
+        if (startingIngridients != null && startingIngridients.Count > 0){
+            foreach (var ing in startingIngridients){
                 AttachIngredient(ing);
             }
         }
     }
     
-    private void OnTriggerEnter(Collider other)
-    {
-        // Sprawdź, czy obiekt to składnik
+    private void OnTriggerEnter(Collider other){
         Ingridient ingredient = other.GetComponent<Ingridient>();
         if (ingredient != null){
             AttachIngredient(ingredient);
@@ -37,20 +33,19 @@ public class Dish : MonoBehaviour{
     }
 
     private void AttachIngredient(Ingridient ingredient){
+       ingredient.transform.SetParent(transform);
+
+        ingredient.transform.rotation = topSnapTransform.rotation;
         data.ingredients.Add(ingredient.GetIngridientName());
-
-        
-
-        Bounds bounds = ingredient.GetComponent<Collider>().bounds;
-        float bottomOffset = bounds.extents.y;
-        var snapTransform = topSnapTransform;
-        Vector3 newPosition = snapTransform.position + new Vector3(0, bottomOffset, 0);
-        ingredient.transform.position = newPosition;
-        ingredient.transform.rotation = snapTransform.rotation;
+        Bounds bounds = ingredient.gameObject.GetComponent<Collider>().bounds;
+        //float bottomOffset = bounds.size.y/2;
+        //var snapTransform = topSnapTransform;
+        //Vector3 newPosition = snapTransform.position + new Vector3(0, bottomOffset, 0);
+        ingredient.transform.position = topSnapTransform.position;
+        ingredient.transform.rotation = topSnapTransform.rotation;
 
         Algorithms.TurnOffPhysics(ingredient.gameObject); 
-
-        ingredient.transform.SetParent(transform);
+        
         snappedIngridients.Add(ingredient.transform);
 
         topSnapTransform = ingredient.GetSnapTransform();

@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor.Callbacks;
 using UnityEngine;
 
 public class Inventory : MonoBehaviour
@@ -118,7 +114,7 @@ public class Inventory : MonoBehaviour
                 Vector3 throwDirection = (cameraTransform.forward + Vector3.up).normalized;
                 rb.isKinematic = false;
                 obj.GetComponent<Collider>().enabled = true;
-                rb.velocity = throwDirection * 5;
+                rb.velocity = throwDirection * 7;
             }
             else{
                 Debug.LogWarning("Held object has no RiggidBody");
