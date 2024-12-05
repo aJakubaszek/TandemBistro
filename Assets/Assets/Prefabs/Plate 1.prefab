@@ -262,6 +262,7 @@ MonoBehaviour:
   startingIngridients: []
   hoverMaterial: {fileID: 2100000, guid: a1da626d80f8d5346bb5d9c46853d77a, type: 2}
   foodCollider: {fileID: 3417842498584561333}
+  ghostMaterial: {fileID: 2100000, guid: a1da626d80f8d5346bb5d9c46853d77a, type: 2}
 --- !u!114 &9037410151195773387
 MonoBehaviour:
   m_ObjectHideFlags: 0

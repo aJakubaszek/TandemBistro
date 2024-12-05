@@ -62,19 +62,19 @@ public class TwoSidedMeat : MonoBehaviour
     }
 
     void UpdateTexture(Material updatedMaterial, float secondsCooked){
-    float percent = Mathf.Clamp(secondsCooked / cookingTime, 0f, 1f);
-    Color startingColor = new Color(1f, 0.49f, 0.49f);
-    Color cookedColor = new Color(0.43f, 0.30f, 0.30f); 
-    Color burntColor = Color.black;
+        float percent = Mathf.Clamp(secondsCooked / cookingTime, 0f, 1f);
+        Color startingColor = new Color(1f, 0.49f, 0.49f);
+        Color cookedColor = new Color(0.43f, 0.30f, 0.30f); 
+        Color burntColor = Color.black;
 
-    Color color;
-    if(percent < 1){
-    color = Color.Lerp(startingColor, cookedColor, percent);
-    }
-    else{
-    color = Color.Lerp(cookedColor, burntColor, Mathf.Clamp(((secondsCooked / (cookingTime)) - 1f)*2, 0f, 1f));
-    }
+        Color color;
+        if(percent < 1){
+        color = Color.Lerp(startingColor, cookedColor, percent);
+        }
+        else{
+        color = Color.Lerp(cookedColor, burntColor, Mathf.Clamp(((secondsCooked / (cookingTime)) - 1f)*2, 0f, 1f));
+        }
 
-    updatedMaterial.color = color;
+        updatedMaterial.color = color;
     }
 }

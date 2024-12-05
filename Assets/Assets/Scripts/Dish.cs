@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using Unity.VisualScripting;
+using UnityEditor.Search;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
@@ -13,8 +14,10 @@ public class Dish : MonoBehaviour{
     [SerializeField] List<Ingridient> startingIngridients;
     [SerializeField] Material hoverMaterial;
     [SerializeField] Collider foodCollider;
+    [SerializeField] Material ghostMaterial;
 
     List<Transform> snappedIngridients = new List<Transform>();
+    private GameObject phantomObject = null;
 
     private void Start()
     {
@@ -27,20 +30,49 @@ public class Dish : MonoBehaviour{
     
     private void OnTriggerEnter(Collider other){
         Ingridient ingredient = other.GetComponent<Ingridient>();
-        if (ingredient != null){
+        XRGrabInteractable xrGrab = other.GetComponent<XRGrabInteractable>();
+        if (ingredient == null || xrGrab == null){
+            return;
+        }
+        if(xrGrab.isSelected){
+            ShowIngredientPhantom(ingredient);
+        }
+        else{
+            DestroyPhantom();
             AttachIngredient(ingredient);
         }
     }
 
+    private void OnTriggerExit(Collider other) {
+        XRGrabInteractable grabInteractable = other.GetComponent<XRGrabInteractable>();
+        if (grabInteractable != null && grabInteractable.isSelected) {
+            DestroyPhantom();
+        }
+    }
+
+
+    private void OnTriggerStay(Collider other){
+        Ingridient ingredient = other.GetComponent<Ingridient>();
+        XRGrabInteractable xrGrab = other.GetComponent<XRGrabInteractable>();
+        if (ingredient == null || xrGrab == null){
+            return;
+        }
+        if(xrGrab.isSelected){
+            if(phantomObject == null){
+                
+            }
+        }
+        else{
+            DestroyPhantom();
+            AttachIngredient(ingredient);
+        }
+    }
     private void AttachIngredient(Ingridient ingredient){
        ingredient.transform.SetParent(transform);
 
         ingredient.transform.rotation = topSnapTransform.rotation;
         data.ingredients.Add(ingredient.GetIngridientName());
         Bounds bounds = ingredient.gameObject.GetComponent<Collider>().bounds;
-        //float bottomOffset = bounds.size.y/2;
-        //var snapTransform = topSnapTransform;
-        //Vector3 newPosition = snapTransform.position + new Vector3(0, bottomOffset, 0);
         ingredient.transform.position = topSnapTransform.position;
         ingredient.transform.rotation = topSnapTransform.rotation;
 
@@ -52,6 +84,20 @@ public class Dish : MonoBehaviour{
         foodCollider.transform.position = topSnapTransform.position;
     }
 
+    private void ShowIngredientPhantom(Ingridient ingridient){
+        if(phantomObject != null){
+            return;
+        }
+        phantomObject = Instantiate(ingridient.gameObject, topSnapTransform.position, topSnapTransform.rotation);
+        phantomObject.GetComponent<Collider>().enabled = false;
+        Algorithms.TurnOnPhysics(phantomObject.gameObject);
+        phantomObject.GetComponent<XRGrabInteractable>().enabled = false;
+
+        phantomObject.transform.SetParent(transform);
+    }
+    private void DestroyPhantom(){
+        Destroy(phantomObject);
+    }
     public void SetData(DishData newData){
         data = newData;
     }
