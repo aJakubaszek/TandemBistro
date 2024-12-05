@@ -1143,6 +1143,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: dddca46cd3a84e14c9062aa1586106a5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 69947696}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: dddca46cd3a84e14c9062aa1586106a5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 69947697}
   m_SourcePrefab: {fileID: 100100000, guid: dddca46cd3a84e14c9062aa1586106a5, type: 3}
 --- !u!1 &69947692 stripped
 GameObject:
@@ -1195,8 +1198,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 7.232218, y: 0.8895922, z: 0.18868268}
-  m_Center: {x: -0.13491154, y: -0.14652252, z: 0.40565878}
+  m_Size: {x: 7.052126, y: 0.6078458, z: 0.24541676}
+  m_Center: {x: -0.22495747, y: -0.005649328, z: 0.37729174}
 --- !u!4 &69947695 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: dddca46cd3a84e14c9062aa1586106a5, type: 3}
@@ -1354,6 +1357,27 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+--- !u!65 &69947697
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 69947692}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 4.476223, y: 1, z: 0.13161898}
+  m_Center: {x: 1.105156, y: 0, z: 0.27097344}
 --- !u!4 &72001865 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1400261963420932646, guid: 091eab4d266ae3b45afa1e6e5a5c2ac5, type: 3}
