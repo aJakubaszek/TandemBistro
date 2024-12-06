@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 4706916743166430331}
   - component: {fileID: 5500264649687049692}
   - component: {fileID: 8541857817724082692}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: LowerBun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -213,8 +213,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.41323298, y: 0.08920173, z: 0.40111744}
-  m_Center: {x: 0.000000029802322, y: -0.043667726, z: -0.0017981753}
+  m_Size: {x: 0.41323298, y: 0.085301116, z: 0.40111744}
+  m_Center: {x: 0.000000029802322, y: 0.046448074, z: -0.0017981827}
 --- !u!114 &8541857817724082692
 MonoBehaviour:
   m_ObjectHideFlags: 0

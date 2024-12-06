@@ -35,11 +35,10 @@ public class Dish : MonoBehaviour{
         }
         if(xrGrab.isSelected){
             ShowIngredientPhantom(ingredient);
+            return;
         }
-        else{
-            DestroyPhantom();
-            AttachIngredient(ingredient);
-        }
+        DestroyPhantom();
+        AttachIngredient(ingredient);
     }
 
     private void OnTriggerExit(Collider other) {
@@ -58,13 +57,12 @@ public class Dish : MonoBehaviour{
         }
         if(xrGrab.isSelected){
             if(phantomObject == null){
-                
+                ShowIngredientPhantom(ingredient);
             }
+            return;
         }
-        else{
             DestroyPhantom();
             AttachIngredient(ingredient);
-        }
     }
     private void AttachIngredient(Ingridient ingredient){
        ingredient.transform.SetParent(transform);
@@ -87,12 +85,25 @@ public class Dish : MonoBehaviour{
         if(phantomObject != null){
             return;
         }
-        phantomObject = Instantiate(ingridient.gameObject, topSnapTransform.position, topSnapTransform.rotation);
-        phantomObject.GetComponent<Collider>().enabled = false;
-        Algorithms.TurnOnPhysics(phantomObject.gameObject);
+        phantomObject = Instantiate(ingridient.gameObject,topSnapTransform.position, topSnapTransform.rotation, transform) ;
+        Algorithms.TurnOffPhysics(phantomObject.gameObject);
+
+        Renderer rendererPhantom = phantomObject.GetComponent<Renderer>();
+        if(rendererPhantom != null){
+            rendererPhantom.material = ghostMaterial;
+        }
+        for (int i = 0; i < phantomObject.transform.childCount; i++){
+            rendererPhantom = phantomObject.transform.GetChild(i).GetComponent<Renderer>();
+            if(rendererPhantom != null){
+            rendererPhantom.material = ghostMaterial;
+        }
+        }
+
+        phantomObject.transform.position = topSnapTransform.position;
+        phantomObject.transform.rotation = topSnapTransform.rotation;
         phantomObject.GetComponent<XRGrabInteractable>().enabled = false;
 
-        phantomObject.transform.SetParent(transform);
+        
     }
     private void DestroyPhantom(){
         Destroy(phantomObject);

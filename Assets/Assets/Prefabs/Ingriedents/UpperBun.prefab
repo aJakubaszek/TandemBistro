@@ -1009,7 +1009,7 @@ GameObject:
   - component: {fileID: 2472439569954593174}
   - component: {fileID: 7291578663159000643}
   - component: {fileID: -9068053456254322034}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: UpperBun
   m_TagString: Untagged
   m_Icon: {fileID: 0}

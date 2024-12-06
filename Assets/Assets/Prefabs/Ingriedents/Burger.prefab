@@ -150,7 +150,7 @@ GameObject:
   - component: {fileID: 2194676527435494745}
   - component: {fileID: 7232910815437829193}
   - component: {fileID: 1917147266740470091}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Burger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -213,8 +213,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.9643021, y: 0.15194178, z: 1.9884872}
-  m_Center: {x: -0.004119873, y: 0.0033020973, z: 0.00333786}
+  m_Size: {x: 1.9643021, y: 0.20313102, z: 1.9884872}
+  m_Center: {x: -0.004119873, y: 0.09507185, z: 0.00333786}
 --- !u!54 &2194676527435494745
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -257,6 +257,7 @@ MonoBehaviour:
   topSnapTransform: {fileID: 3277656945726206263}
   ingridientName: Meat
   isPrepared: 1
+  ingridientPrefab: {fileID: 5340363378837870764}
 --- !u!114 &1917147266740470091
 MonoBehaviour:
   m_ObjectHideFlags: 0

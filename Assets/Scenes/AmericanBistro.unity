@@ -1801,7 +1801,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8841706926471734270, guid: 2fd3e07afe5b461490fb8e314976b1b0, type: 3}
       propertyPath: m_Name
-      value: Direct Interactor
+      value: Left Direct Interactor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2706,7 +2706,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2695362552377121818, guid: e6d1a6ce50d15174b99704a1dfc133b2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.185
+      value: 0.32
       objectReference: {fileID: 0}
     - target: {fileID: 2695362552377121818, guid: e6d1a6ce50d15174b99704a1dfc133b2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5735,7 +5735,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8841706926471734270, guid: 2fd3e07afe5b461490fb8e314976b1b0, type: 3}
       propertyPath: m_Name
-      value: Direct Interactor
+      value: Right Direct Interactor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

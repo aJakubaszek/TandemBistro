@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 7049556249379030229}
   - component: {fileID: 1930377189985647898}
   - component: {fileID: 2921707531069422280}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: SlicedTomato
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,8 +167,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.0836788, y: 0.060066693, z: 0.7936634}
-  m_Center: {x: 0, y: 0.17145716, z: 0.06285885}
+  m_Size: {x: 1.0836788, y: 0.05375354, z: 0.7936634}
+  m_Center: {x: 0, y: 0.027380591, z: 0.062858835}
 --- !u!114 &1930377189985647898
 MonoBehaviour:
   m_ObjectHideFlags: 0

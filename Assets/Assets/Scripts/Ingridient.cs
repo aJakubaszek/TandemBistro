@@ -8,6 +8,7 @@ public class Ingridient : MonoBehaviour
     [SerializeField] Transform topSnapTransform;
     [SerializeField] string ingridientName;
     [SerializeField] bool isPrepared = false;
+    [SerializeField] GameObject ingridientPrefab;
 
 
     public string GetIngridientName(){
