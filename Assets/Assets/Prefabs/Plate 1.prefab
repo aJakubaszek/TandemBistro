@@ -143,6 +143,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2695362552377121818}
+  - component: {fileID: 2228791785838390733}
   - component: {fileID: 8042030182557825187}
   - component: {fileID: 3163769040057440903}
   - component: {fileID: 5733821128167798686}
@@ -179,6 +180,27 @@ Transform:
   - {fileID: 5668163425283310505}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2228791785838390733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2170838861280778805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 2534867495
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!114 &8042030182557825187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256,13 +278,14 @@ MonoBehaviour:
   data:
     dishName: 
     ingredients: []
-    dishImage: {fileID: 0}
+    dishImageID: 0
     minimalLevel: 0
   topSnapTransform: {fileID: 3394945079864670193}
   startingIngridients: []
   hoverMaterial: {fileID: 2100000, guid: a1da626d80f8d5346bb5d9c46853d77a, type: 2}
   foodCollider: {fileID: 3417842498584561333}
   ghostMaterial: {fileID: 2100000, guid: a1da626d80f8d5346bb5d9c46853d77a, type: 2}
+  snapCollider: {fileID: 3417842498584561333}
 --- !u!114 &9037410151195773387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -373,7 +396,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
@@ -743,7 +766,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.2
+  m_Radius: 0.3
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5276731238883144126
 GameObject:
@@ -1039,7 +1062,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.1237, z: 0}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2695362552377121818}

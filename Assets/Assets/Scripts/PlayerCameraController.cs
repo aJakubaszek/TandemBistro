@@ -44,7 +44,7 @@ public class PlayerCameraController : NetworkBehaviour
 
         Quaternion targetRotation = Quaternion.Euler(xRotation, yRotation, 0);
         //cameraTransform.localRotation = Quaternion.Lerp(cameraTransform.localRotation, targetRotation, 5f*Time.deltaTime); //Fancy camera movement, may fix it someday
-        cameraTransform.localRotation = Quaternion.Euler(xRotation, yRotation, 0);
+        cameraTransform.localRotation = Quaternion.Euler(xRotation, 0, 0);
         modelTransform.localRotation = Quaternion.Euler(0, yRotation, 0);
     }
 

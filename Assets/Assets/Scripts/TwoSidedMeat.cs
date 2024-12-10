@@ -1,15 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class TwoSidedMeat : MonoBehaviour
+public class TwoSidedMeat : NetworkBehaviour
 {
     [SerializeField] Collider bottomCollider;
     [SerializeField] Collider topCollider;
     [SerializeField] float cookingTime = 15f;
-    public float topSecondsCooked = 0f;
-    public float bottomSecondsCooked = 0f;
+    public NetworkVariable<float> topSecondsCooked = new NetworkVariable<float>(0f);
+    public NetworkVariable<float> bottomSecondsCooked = new NetworkVariable<float>(0f);
     Collider touchedOven;
     bool isCooking = false;
 
@@ -32,14 +33,16 @@ public class TwoSidedMeat : MonoBehaviour
 
 
     private void OnTriggerEnter(Collider other){
+        if(!IsServer){return;}
         if(other.CompareTag("Oven")){
-            touchedOven = other;
-            isCooking = true;
-            Clock.HalfSecondPassed += CookSide;
+             touchedOven = other;
+             isCooking = true;
+             Clock.HalfSecondPassed += CookSide;
         }
     }
 
     private void OnTriggerExit(Collider other){
+        if(!IsServer){return;}
         if(other.CompareTag("Oven")){
             touchedOven = null;
             isCooking = false;
@@ -50,17 +53,18 @@ public class TwoSidedMeat : MonoBehaviour
         if(touchedOven != null){
             if(isCooking){
                 if(bottomCollider.bounds.Intersects(touchedOven.bounds)){
-                    bottomSecondsCooked += 0.5f;
-                    UpdateTexture(bottomMaterial, bottomSecondsCooked);
+                    bottomSecondsCooked.Value += 0.5f;
+                    UpdateTexture(bottomMaterial, bottomSecondsCooked.Value);
                 }
                 else if (topCollider.bounds.Intersects(touchedOven.bounds)){
-                    topSecondsCooked += 0.5f;
-                    UpdateTexture(topMaterial, topSecondsCooked);
+                    topSecondsCooked.Value += 0.5f;
+                    UpdateTexture(topMaterial, topSecondsCooked.Value);
                 }
             }
         }
     }
 
+    
     void UpdateTexture(Material updatedMaterial, float secondsCooked){
         float percent = Mathf.Clamp(secondsCooked / cookingTime, 0f, 1f);
         Color startingColor = new Color(1f, 0.49f, 0.49f);

@@ -1,41 +1,42 @@
+using Unity.Multiplayer.Samples.Utilities.ClientAuthority;
+using Unity.Netcode;
+using Unity.Netcode.Components;
 using UnityEngine;
 
-public class Inventory : MonoBehaviour
+public class Inventory : NetworkBehaviour
 {
-    public Transform holdingPointTransform, cameraTransform;
+    public Transform holdingPointTransform, cameraTransform, parentTransform;
     [SerializeField] float maxDistance = 3f;
-    GameObject heldObject = null;
+    NetworkObject heldObject = null;
     bool isHoldingItem = false;
     RaycastHit hit;
     Ray ray;
-    void Start(){
-    }
 
     void Update(){
+        if(!IsOwner) {return;}
         FindObject();
         if (Input.GetKeyDown(KeyCode.E) && hit.collider != null){ //Podzielić bloki warunkowe(?) dla optymalizacji. Przerobić na switch case z osobnymi if'ami
-            if(!isHoldingItem &&   hit.collider.CompareTag("Pickup")){
-                Pickup(hit.collider.gameObject);
+            if(!isHoldingItem && hit.collider.CompareTag("Pickup")){
+                RequestPickupServerRpc(hit.collider.gameObject.GetComponent<NetworkObject>().NetworkObjectId);
             }
             else if(isHoldingItem && hit.collider.CompareTag("Tabletop")){
-                PutDown();
+                RequestPutDownServerRpc();
             }
             else if (isHoldingItem && hit.collider.CompareTag("NPC")){
                 Guest guest = hit.collider.gameObject.GetComponent<Guest>();
-                if(guest != null && guest.isSeated && guest.GetOrder().ingredients.Count > 0){
-                    if(guest.GiveOrder(heldObject)){
-                        isHoldingItem = false;
-                        Destroy(heldObject);
-                    }
+                if(guest != null && guest.isSeated.Value && guest.isWaiting.Value){
+                    NetworkObject networkObject = heldObject.GetComponent<NetworkObject>();
+                    guest.GiveOrderServerRpc(networkObject.NetworkObjectId);
+                    
                 }
             }
             else if(isHoldingItem && hit.collider.CompareTag("Trash")){
-                TrashItem();
+                TrashItemClientRpc();
             }
         }
 
     else if (Input.GetKeyDown(KeyCode.Q)){
-        ThrowItem();
+        RequestThrowServerRpc();
     }
     }
 
@@ -56,7 +57,7 @@ public class Inventory : MonoBehaviour
                 }
                 else if(isHoldingItem && hit.collider.CompareTag("NPC")){
                     Guest guest = hit.collider.gameObject.GetComponent<Guest>();
-                    if(guest != null && guest.isSeated && guest.GetOrder().ingredients.Count > 0){
+                    if(guest != null && guest.isSeated.Value && guest.isWaiting.Value){
                         CursorManager.Instance.SetCursor(CursorManager.Instance.GetGiveCursor());
                     }
                 }
@@ -71,22 +72,39 @@ public class Inventory : MonoBehaviour
             hit = default;
         }
     }
+    [ServerRpc(RequireOwnership = false)]
+    void RequestPickupServerRpc(ulong pickupID){
+        PickupClientRpc(pickupID);
+    }
 
-    void Pickup(GameObject pickup){
-        heldObject = pickup;
+    [ClientRpc(RequireOwnership = false)]
+    void PickupClientRpc(ulong pickupID){
+        Debug.Log("pickup");
+        heldObject = NetworkManager.Singleton.SpawnManager.SpawnedObjects[pickupID];
 
-        Rigidbody rb = pickup.GetComponent<Rigidbody>();
+        Rigidbody rb = heldObject.GetComponent<Rigidbody>();
+        if(rb != null){
         rb.isKinematic = true;
-        Collider collider = pickup.GetComponent<Collider>();
+        }
+        Collider collider = heldObject.GetComponent<Collider>();
+        if(collider != null){
         collider.enabled = false;
-        pickup.transform.position = holdingPointTransform.position;
-        pickup.transform.SetParent(holdingPointTransform);
+        }
+        heldObject.transform.position = holdingPointTransform.position;
+
+        heldObject.TrySetParent(parentTransform);
 
         isHoldingItem = true;
     }
 
-    void PutDown(){
-        LeaveHeldItem();
+    [ServerRpc(RequireOwnership = false)]
+    void RequestPutDownServerRpc(){
+        PutDownClientRpc();
+    }
+     
+    [ClientRpc(RequireOwnership = false)]
+    void PutDownClientRpc(){
+        LeaveHeldItemClientRpc();
 
         float objectHeight = heldObject.GetComponent<Collider>().bounds.extents.y;
 
@@ -103,13 +121,18 @@ public class Inventory : MonoBehaviour
 
 
     }
+    [ServerRpc(RequireOwnership = false)]
+    void RequestThrowServerRpc(){
+        ThrowItemClientRpc();
+    }
 
-    void ThrowItem(){
+    [ClientRpc(RequireOwnership = false)]
+    void ThrowItemClientRpc(){
         if(heldObject != null){
-            GameObject obj = heldObject;
+            NetworkObject obj = heldObject;
             Rigidbody rb = obj.GetComponent<Rigidbody>();
             if(rb != null){
-                LeaveHeldItem();
+                LeaveHeldItemClientRpc();
             
                 Vector3 throwDirection = (cameraTransform.forward + Vector3.up).normalized;
                 rb.isKinematic = false;
@@ -123,13 +146,16 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    void LeaveHeldItem(){
-        holdingPointTransform.DetachChildren();
+
+    [ClientRpc(RequireOwnership = false)]
+    void LeaveHeldItemClientRpc(){ //nie ustawione
+        heldObject.TryRemoveParent();
         heldObject = null;
         isHoldingItem = false;
     }
-    void TrashItem(){
-        LeaveHeldItem();
+    [ClientRpc(RequireOwnership = false)]
+    public void TrashItemClientRpc(){ //nie ustawione
+        LeaveHeldItemClientRpc();
         Destroy(heldObject);
     }
 }

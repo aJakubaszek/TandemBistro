@@ -145,6 +145,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9077339214114087571}
+  - component: {fileID: 4794452002118970659}
   - component: {fileID: 4839332620062745666}
   - component: {fileID: 7174232577897777058}
   - component: {fileID: 2194676527435494745}
@@ -175,6 +176,27 @@ Transform:
   - {fileID: 3277656945726206263}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4794452002118970659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5340363378837870764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 1836562851
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!114 &4839332620062745666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,8 +212,10 @@ MonoBehaviour:
   bottomCollider: {fileID: 4116994178617327782}
   topCollider: {fileID: 7676137440167030571}
   cookingTime: 15
-  topSecondsCooked: 0
-  bottomSecondsCooked: 0
+  topSecondsCooked:
+    m_InternalValue: 0
+  bottomSecondsCooked:
+    m_InternalValue: 0
   top: {fileID: 3827589190834278184}
   bottom: {fileID: 5624850414905666931}
 --- !u!65 &7174232577897777058

@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
-public class GuestManager : MonoBehaviour{
+public class GuestManager : NetworkBehaviour{
     public static GuestManager Instance{ get; private set; }
 
     [SerializeField] int initialPoolSize;
@@ -19,6 +20,7 @@ public class GuestManager : MonoBehaviour{
     }
 
     private void Start(){
+        if(!IsServer){return;}
         for(int i = 0; i <initialPoolSize; i++){
             GameObject guest = Instantiate(guestPrefab);
             guest.SetActive(false);

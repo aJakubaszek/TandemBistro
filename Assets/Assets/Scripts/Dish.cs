@@ -1,13 +1,10 @@
-using System.Collections;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
-using Unity.VisualScripting;
-using UnityEditor.Search;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class Dish : MonoBehaviour{
+public class Dish : NetworkBehaviour{
     [SerializeField] DishData data;
     
     [SerializeField] Transform topSnapTransform;
@@ -15,19 +12,15 @@ public class Dish : MonoBehaviour{
     [SerializeField] Material hoverMaterial;
     [SerializeField] Collider foodCollider;
     [SerializeField] Material ghostMaterial;
+    [SerializeField] Collider snapCollider;
 
     List<Transform> snappedIngridients = new List<Transform>();
     private GameObject phantomObject = null;
-
-    private void Start()
-    {
-        if (startingIngridients != null && startingIngridients.Count > 0){
-            foreach (var ing in startingIngridients){
-                AttachIngredient(ing);
-            }
-        }
-    }
     
+    private void OnNetworkDestroy(){
+        Destroy(topSnapTransform.gameObject);
+        Destroy(snapCollider.gameObject);
+    }
     private void OnTriggerEnter(Collider other){
         Ingridient ingredient = other.GetComponent<Ingridient>();
         XRGrabInteractable xrGrab = other.GetComponent<XRGrabInteractable>();
@@ -39,7 +32,7 @@ public class Dish : MonoBehaviour{
         }
         else{
             DestroyPhantom();
-            AttachIngredient(ingredient);
+            NewAttachServerRpc(ingredient.gameObject.GetComponent<NetworkObject>().NetworkObjectId);
         }
     }
 
@@ -64,13 +57,21 @@ public class Dish : MonoBehaviour{
         }
         else{
             DestroyPhantom();
-            AttachIngredient(ingredient);
+            NewAttachServerRpc(ingredient.gameObject.GetComponent<NetworkObject>().NetworkObjectId);
         }
     }
-    private void AttachIngredient(Ingridient ingredient){
-       ingredient.transform.SetParent(transform);
+    [ServerRpc(RequireOwnership = false)]
+    private void NewAttachServerRpc(ulong ingridientID){
+        AttachIngredientClientRpc(ingridientID);
+    }
 
-        ingredient.transform.rotation = topSnapTransform.rotation;
+    [ClientRpc(RequireOwnership = false)]
+    private void AttachIngredientClientRpc(ulong ingredientID){
+       NetworkObject ingredientNO = NetworkManager.Singleton.SpawnManager.SpawnedObjects[ingredientID];
+       ingredientNO.TrySetParent(transform);
+       Ingridient ingredient = ingredientNO.GetComponent<Ingridient>();
+
+        ingredientNO.transform.rotation = topSnapTransform.rotation;
         data.ingredients.Add(ingredient.GetIngridientName());
         Bounds bounds = ingredient.gameObject.GetComponent<Collider>().bounds;
         ingredient.transform.position = topSnapTransform.position;

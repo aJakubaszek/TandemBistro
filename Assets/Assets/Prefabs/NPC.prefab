@@ -87,10 +87,11 @@ GameObject:
   - component: {fileID: 1093203396573562223}
   - component: {fileID: 6793653326580444086}
   - component: {fileID: 1744487887816518633}
+  - component: {fileID: -2089175304998075965}
   - component: {fileID: 2692394544428754516}
   - component: {fileID: 770983701597994507}
   - component: {fileID: 3619705444791456889}
-  - component: {fileID: 1482161220058698471}
+  - component: {fileID: 7619747669473891359}
   m_Layer: 0
   m_Name: NPC
   m_TagString: NPC
@@ -187,6 +188,27 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-2089175304998075965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6163236336561658418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 3709768094
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!114 &2692394544428754516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,10 +261,13 @@ MonoBehaviour:
   eatingTime: 3
   patience: 30
   orderImage: {fileID: 3948182075438405878}
-  isSeated: 0
-  isWaiting: 0
-  timeWaiting: 0
---- !u!114 &1482161220058698471
+  isSeated:
+    m_InternalValue: 0
+  isWaiting:
+    m_InternalValue: 0
+  timeWaiting:
+    m_InternalValue: 0
+--- !u!114 &7619747669473891359
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -251,18 +276,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 6163236336561658418}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: adcbb20073132544db3d378ad9d4305c, type: 3}
+  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data:
-    dishName: 
-    ingredients: []
-    dishImage: {fileID: 0}
-    minimalLevel: 0
-  topSnapTransform: {fileID: 0}
-  startingIngridients: []
-  hoverMaterial: {fileID: 0}
-  foodCollider: {fileID: 0}
+  UseUnreliableDeltas: 0
+  SyncPositionX: 1
+  SyncPositionY: 1
+  SyncPositionZ: 1
+  SyncRotAngleX: 1
+  SyncRotAngleY: 1
+  SyncRotAngleZ: 0
+  SyncScaleX: 0
+  SyncScaleY: 0
+  SyncScaleZ: 0
+  PositionThreshold: 0.001
+  RotAngleThreshold: 0.01
+  ScaleThreshold: 0.01
+  UseQuaternionSynchronization: 0
+  UseQuaternionCompression: 0
+  UseHalfFloatPrecision: 0
+  InLocalSpace: 0
+  Interpolate: 1
+  SlerpPosition: 0
 --- !u!1 &7120324672100093042
 GameObject:
   m_ObjectHideFlags: 0

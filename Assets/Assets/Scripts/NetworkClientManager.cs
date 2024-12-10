@@ -7,7 +7,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class NetworkClientManager : MonoBehaviour{
-    [SerializeField] Button hostButton;
+    [SerializeField] Button hostButton; //Zrobić jakieś DontDestroyOnLoad i ręcznie zarządzać spawnowaniem
     [SerializeField] Button joinButton;
     [SerializeField] TMP_InputField inputField;
     private void Awake(){

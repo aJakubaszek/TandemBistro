@@ -6,7 +6,7 @@ using UnityEngine;
 public struct DishData{
     public string dishName;
     public List<string> ingredients;
-    public Sprite dishImage;
+    public int dishImageID;
     public int minimalLevel;
     
 }

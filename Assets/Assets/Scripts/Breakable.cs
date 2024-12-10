@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
-public class Breakable : MonoBehaviour
+public class Breakable : NetworkBehaviour
 {
     [SerializeField] float breakSpeed = 5f;
     [SerializeField] AudioClip breakSound;
@@ -21,7 +22,21 @@ public class Breakable : MonoBehaviour
             return;
         }
         if(rb.velocity.magnitude > breakSpeed){
+            RequestBreakServerRpc();
+        }
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    void RequestBreakServerRpc(){
+        if(IsServer){
             plateBroken = true;
+            BreakClientRpc();
+        }
+
+    }
+    [ClientRpc(RequireOwnership = false)]
+    void BreakClientRpc(){
+        plateBroken = true;
             foreach(Transform piece in gameObject.transform){
                     Rigidbody rbPiece = piece.gameObject.GetComponent<Rigidbody>();
                     if(rbPiece != null){
@@ -36,6 +51,7 @@ public class Breakable : MonoBehaviour
                         float randomForce = Random.Range(0f,4f);
 
                         rb.AddForce(randomDirection * randomForce, ForceMode.Impulse);
+                        
                     }
 
                     Collider mc = piece.gameObject.GetComponent<Collider>();
@@ -43,11 +59,22 @@ public class Breakable : MonoBehaviour
                         mc.enabled = true;
                     }
             }
-            gameObject.transform.DetachChildren();
+            for( int i = 0; i < gameObject.transform.childCount; i++){
+                NetworkObject NO = gameObject.transform.GetChild(i).GetComponent<NetworkObject>();
+                if(NO == null){
+                    NO.TrySetParent((Transform)null);
+                }
+                else{
+                    gameObject.transform.GetChild(i).SetParent(null);
+                }
+            }
             if (breakSound != null){
                 AudioSource.PlayClipAtPoint(breakSound, transform.position);
             }
+            if(IsServer){
+                gameObject.GetComponent<NetworkObject>().Despawn();
+                
+            }
             Destroy(gameObject);
-        }
     }
 }

@@ -1,12 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
+using Unity.Netcode.Components;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
 
-public class NPC : MonoBehaviour
+public class NPC : NetworkBehaviour
 {
     [Header("Basics")]
     [SerializeField] NavMeshAgent navMeshAgent;
@@ -16,11 +18,6 @@ public class NPC : MonoBehaviour
 
     bool isWalking = false;
     
-    //Guest guest;
-    
-    void Awake(){
-        //guest = gameObject.GetComponent<Guest>();
-    }
 
     void OnEnable(){
         if(spawnTransform != null){
@@ -64,11 +61,5 @@ public class NPC : MonoBehaviour
     public void TurnOnNavmesh(){
          navMeshAgent.enabled = true;;
     }
-
-
-
-    
-
-     
 
 }

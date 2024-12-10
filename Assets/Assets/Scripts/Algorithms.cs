@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Algorithms{
@@ -28,5 +30,18 @@ public class Algorithms{
             rb.useGravity = true;
         }
         obj.GetComponent<Collider>().enabled = true;
+    }
+
+    public static void NGOSpawn(Transform obj){
+        Transform parentTransform = obj.parent;
+        NetworkObject parentNetwork = parentTransform.GetComponent<NetworkObject>();
+        if(parentNetwork != null){
+            parentTransform.AddComponent<NetworkObject>();
+        }
+        if(!parentTransform.gameObject.GetComponent<NetworkObject>().IsSpawned){
+            NGOSpawn(parentTransform);
+        }
+        obj.GetComponent<NetworkObject>().Spawn();
+        obj.parent = parentTransform;
     }
 }
