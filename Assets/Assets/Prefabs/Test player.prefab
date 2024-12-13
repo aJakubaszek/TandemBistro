@@ -16,8 +16,8 @@ GameObject:
   - component: {fileID: 7774941617522489600}
   - component: {fileID: 6744767895131967281}
   - component: {fileID: 3240479400824058544}
-  - component: {fileID: 7212628335070786568}
-  - component: {fileID: 1317693130918870682}
+  - component: {fileID: 8248224821234611306}
+  - component: {fileID: 5560218402671585547}
   m_Layer: 6
   m_Name: Test player
   m_TagString: Untagged
@@ -191,7 +191,7 @@ MonoBehaviour:
   cameraTransform: {fileID: 4418787271141117175}
   parentTransform: {fileID: 4879405638787894838}
   maxDistance: 3
---- !u!114 &7212628335070786568
+--- !u!114 &8248224821234611306
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -209,10 +209,10 @@ MonoBehaviour:
   SyncPositionZ: 1
   SyncRotAngleX: 1
   SyncRotAngleY: 1
-  SyncRotAngleZ: 0
-  SyncScaleX: 0
-  SyncScaleY: 0
-  SyncScaleZ: 0
+  SyncRotAngleZ: 1
+  SyncScaleX: 1
+  SyncScaleY: 1
+  SyncScaleZ: 1
   PositionThreshold: 0.001
   RotAngleThreshold: 0.01
   ScaleThreshold: 0.01
@@ -222,7 +222,7 @@ MonoBehaviour:
   InLocalSpace: 0
   Interpolate: 1
   SlerpPosition: 0
---- !u!114 &1317693130918870682
+--- !u!114 &5560218402671585547
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

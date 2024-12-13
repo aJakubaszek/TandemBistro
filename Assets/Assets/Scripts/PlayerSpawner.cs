@@ -25,8 +25,8 @@ public class CustomPlayerSpawner : MonoBehaviour
         if (!NetworkManager.Singleton.IsServer)
             return;
 
-        //Losowanie pozycji początkowej - chwilowo ustawione na 0,0,0
-        Vector3 spawnPosition = new Vector3(Random.Range(0f, 0f), 0, Random.Range(0f, 0f));
+        //Vector3 spawnPosition = new Vector3(Random.Range(0f, 0f), 0, Random.Range(0f, 0f));
+        Vector3 spawnPosition = new Vector3(Random.Range(7f, 7f), 0, Random.Range(0f, 0f));
         Quaternion spawnRotation = Quaternion.identity;
 
         GameObject playerInstance = Instantiate(playerPrefab, spawnPosition, spawnRotation);
