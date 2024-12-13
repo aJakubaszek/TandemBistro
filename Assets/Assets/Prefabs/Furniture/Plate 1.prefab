@@ -143,6 +143,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2695362552377121818}
+  - component: {fileID: 8575540818320052017}
   - component: {fileID: 8042030182557825187}
   - component: {fileID: 3163769040057440903}
   - component: {fileID: 5733821128167798686}
@@ -179,6 +180,27 @@ Transform:
   - {fileID: 5668163425283310505}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8575540818320052017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2170838861280778805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 874174122
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!114 &8042030182557825187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256,13 +278,14 @@ MonoBehaviour:
   data:
     dishName: 
     ingredients: []
-    dishImage: {fileID: 0}
+    dishImageID: 0
     minimalLevel: 0
   topSnapTransform: {fileID: 3394945079864670193}
   startingIngridients: []
   hoverMaterial: {fileID: 2100000, guid: a1da626d80f8d5346bb5d9c46853d77a, type: 2}
   foodCollider: {fileID: 3417842498584561333}
   ghostMaterial: {fileID: 2100000, guid: a1da626d80f8d5346bb5d9c46853d77a, type: 2}
+  snapCollider: {fileID: 0}
 --- !u!114 &9037410151195773387
 MonoBehaviour:
   m_ObjectHideFlags: 0
