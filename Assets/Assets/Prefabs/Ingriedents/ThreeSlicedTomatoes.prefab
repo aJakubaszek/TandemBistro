@@ -393,13 +393,8 @@ GameObject:
   - component: {fileID: 8279827524140336130}
   - component: {fileID: -8073908137295546372}
   - component: {fileID: -5388027458511046881}
-<<<<<<< Updated upstream
   - component: {fileID: 5489335125799904685}
   - component: {fileID: 4053407077998699454}
-=======
-  - component: {fileID: 608384135158826887}
-  - component: {fileID: -8923033267888999917}
->>>>>>> Stashed changes
   m_Layer: 0
   m_Name: ThreeSlicedTomatoes
   m_TagString: Untagged
@@ -663,11 +658,7 @@ MonoBehaviour:
   SpawnWithObservers: 1
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
-<<<<<<< Updated upstream
 --- !u!114 &5489335125799904685
-=======
---- !u!114 &608384135158826887
->>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -698,11 +689,7 @@ MonoBehaviour:
   InLocalSpace: 0
   Interpolate: 1
   SlerpPosition: 0
-<<<<<<< Updated upstream
 --- !u!114 &4053407077998699454
-=======
---- !u!114 &-8923033267888999917
->>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

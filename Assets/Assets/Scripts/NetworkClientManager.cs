@@ -19,8 +19,6 @@ public class NetworkClientManager : MonoBehaviour{
         });
     }
 
-    
-
     private void JoinGame(){
         UnityTransport transport = NetworkManager.Singleton.GetComponent<UnityTransport>();
         transport.ConnectionData.Address = inputField.text;

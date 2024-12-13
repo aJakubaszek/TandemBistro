@@ -149,13 +149,8 @@ GameObject:
   - component: {fileID: 5733821128167798686}
   - component: {fileID: 5393322163303387792}
   - component: {fileID: 9037410151195773387}
-<<<<<<< Updated upstream
   - component: {fileID: 3788613186633977809}
   - component: {fileID: -5952178904789499518}
-=======
-  - component: {fileID: -826345052448032550}
-  - component: {fileID: 456728334803524613}
->>>>>>> Stashed changes
   m_Layer: 0
   m_Name: Plate 1
   m_TagString: Pickup
@@ -445,11 +440,7 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
-<<<<<<< Updated upstream
 --- !u!114 &3788613186633977809
-=======
---- !u!114 &-826345052448032550
->>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -480,11 +471,7 @@ MonoBehaviour:
   InLocalSpace: 0
   Interpolate: 1
   SlerpPosition: 0
-<<<<<<< Updated upstream
 --- !u!114 &-5952178904789499518
-=======
---- !u!114 &456728334803524613
->>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

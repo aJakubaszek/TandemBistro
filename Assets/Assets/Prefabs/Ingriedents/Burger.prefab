@@ -151,13 +151,8 @@ GameObject:
   - component: {fileID: 2194676527435494745}
   - component: {fileID: 7232910815437829193}
   - component: {fileID: 1917147266740470091}
-<<<<<<< Updated upstream
   - component: {fileID: 5632967743592856051}
   - component: {fileID: 2159936777219313160}
-=======
-  - component: {fileID: -7040982988514159120}
-  - component: {fileID: 8457368470600672114}
->>>>>>> Stashed changes
   m_Layer: 0
   m_Name: Burger
   m_TagString: Untagged
@@ -441,11 +436,7 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
-<<<<<<< Updated upstream
 --- !u!114 &5632967743592856051
-=======
---- !u!114 &-7040982988514159120
->>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -476,11 +467,7 @@ MonoBehaviour:
   InLocalSpace: 0
   Interpolate: 1
   SlerpPosition: 0
-<<<<<<< Updated upstream
 --- !u!114 &2159936777219313160
-=======
---- !u!114 &8457368470600672114
->>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

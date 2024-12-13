@@ -3461,13 +3461,8 @@ GameObject:
   - component: {fileID: 8142016038534522920}
   - component: {fileID: 7771309800415234655}
   - component: {fileID: 8896771107747834285}
-<<<<<<< Updated upstream
   - component: {fileID: -6131029673917611615}
   - component: {fileID: 4270051786000966673}
-=======
-  - component: {fileID: 7469079010749486013}
-  - component: {fileID: 1005215049884528075}
->>>>>>> Stashed changes
   m_Layer: 0
   m_Name: Bun
   m_TagString: Untagged
@@ -3728,11 +3723,7 @@ MonoBehaviour:
   SpawnWithObservers: 1
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
-<<<<<<< Updated upstream
 --- !u!114 &-6131029673917611615
-=======
---- !u!114 &7469079010749486013
->>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3763,11 +3754,7 @@ MonoBehaviour:
   InLocalSpace: 0
   Interpolate: 1
   SlerpPosition: 0
-<<<<<<< Updated upstream
 --- !u!114 &4270051786000966673
-=======
---- !u!114 &1005215049884528075
->>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
