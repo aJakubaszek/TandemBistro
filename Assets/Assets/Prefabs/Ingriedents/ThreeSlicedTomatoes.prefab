@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6378840006002600218}
   - component: {fileID: 6865558818267419417}
   - component: {fileID: 1077884095673462772}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1973628758539922117}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: SlicedTomato (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,8 +108,8 @@ Transform:
   m_GameObject: {fileID: 1164299571811332223}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.44330594, z: 0, w: 0.8963704}
-  m_LocalPosition: {x: 0.073652506, y: -0.0587, z: 0.056868542}
-  m_LocalScale: {x: 0.2, y: 0.4, z: 0.2}
+  m_LocalPosition: {x: 0.0307, y: -0.0437, z: 0.0241}
+  m_LocalScale: {x: 0.1, y: 0.3, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6378840006002600218}
@@ -125,7 +125,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1249077857366064069}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: SnapPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,8 +141,8 @@ Transform:
   m_GameObject: {fileID: 2315715522972559256}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.0165, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.0146, z: 0}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6707820447902761537}
@@ -156,7 +156,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3402231415811216357}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: SlicedTomato (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -172,8 +172,8 @@ Transform:
   m_GameObject: {fileID: 2629248819588122975}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.055995822, z: 0, w: 0.998431}
-  m_LocalPosition: {x: 0.0165, y: -0.0587, z: -0.1417}
-  m_LocalScale: {x: 0.2, y: 0.4, z: 0.2}
+  m_LocalPosition: {x: 0.0019, y: -0.0437, z: -0.0744}
+  m_LocalScale: {x: 0.1, y: 0.3, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7841517522901504058}
@@ -191,7 +191,7 @@ GameObject:
   - component: {fileID: 8526124740453767625}
   - component: {fileID: 8184040158834598858}
   - component: {fileID: 2315335817504464679}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -274,7 +274,7 @@ GameObject:
   - component: {fileID: 7841517522901504058}
   - component: {fileID: 7715729161716705849}
   - component: {fileID: 4224924331802007252}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -355,7 +355,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3870681775898040854}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: SlicedTomato (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -371,8 +371,8 @@ Transform:
   m_GameObject: {fileID: 4538709498290454700}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.9059386, z: 0, w: 0.42340913}
-  m_LocalPosition: {x: -0.12134749, y: -0.0587, z: 0.031868543}
-  m_LocalScale: {x: 0.2, y: 0.4, z: 0.2}
+  m_LocalPosition: {x: -0.0684, y: -0.0437, z: 0.0059}
+  m_LocalScale: {x: 0.1, y: 0.3, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8526124740453767625}
@@ -392,8 +392,7 @@ GameObject:
   - component: {fileID: 890444096425601123}
   - component: {fileID: 8279827524140336130}
   - component: {fileID: -8073908137295546372}
-  - component: {fileID: -1483117746978642538}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: ThreeSlicedTomatoes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -434,6 +433,7 @@ MonoBehaviour:
   topSnapTransform: {fileID: 1249077857366064069}
   ingridientName: Tomato
   isPrepared: 1
+  ingridientPrefab: {fileID: 0}
 --- !u!54 &890444096425601123
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -460,7 +460,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!65 &8279827524140336130
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -480,8 +480,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.40160194, y: 0.011985192, z: 0.3867957}
-  m_Center: {x: -0.11255841, y: 0.034881342, z: -0.09602159}
+  m_Size: {x: 0.19582033, y: 0.015768504, z: 0.19014807}
+  m_Center: {x: -0.014666155, y: 0.0076846285, z: -0.014377736}
 --- !u!114 &-8073908137295546372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -586,13 +586,13 @@ MonoBehaviour:
       m_Calls: []
   m_AttachTransform: {fileID: 0}
   m_SecondaryAttachTransform: {fileID: 0}
-  m_UseDynamicAttach: 0
+  m_UseDynamicAttach: 1
   m_MatchAttachPosition: 1
   m_MatchAttachRotation: 1
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
@@ -605,7 +605,7 @@ MonoBehaviour:
   m_SmoothRotation: 0
   m_SmoothRotationAmount: 8
   m_TightenRotation: 0.1
-  m_TrackScale: 1
+  m_TrackScale: 0
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
@@ -629,32 +629,11 @@ MonoBehaviour:
   m_ThrowVelocityScale: 1.5
   m_ThrowAngularVelocityScale: 1
   m_ForceGravityOnDetach: 0
-  m_RetainTransformParent: 1
+  m_RetainTransformParent: 0
   m_AttachPointCompatibilityMode: 0
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
---- !u!114 &-1483117746978642538
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5098269602787315187}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 0
-  InScenePlacedSourceGlobalObjectIdHash: 0
-  AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
-  SpawnWithObservers: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
 --- !u!1 &6601503428751273529
 GameObject:
   m_ObjectHideFlags: 0
@@ -666,7 +645,7 @@ GameObject:
   - component: {fileID: 353641998030610544}
   - component: {fileID: 4619494859200208252}
   - component: {fileID: 1212860049470575211}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Plane.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -749,7 +728,7 @@ GameObject:
   - component: {fileID: 3511954566945462608}
   - component: {fileID: 8380958719684469852}
   - component: {fileID: 2630219133046401867}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Plane.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -832,7 +811,7 @@ GameObject:
   - component: {fileID: 3043505297675604131}
   - component: {fileID: 7984722083108122031}
   - component: {fileID: 4467607932817351352}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Plane.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}

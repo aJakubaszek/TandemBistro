@@ -27,8 +27,8 @@ Transform:
   m_GameObject: {fileID: 3415203698002355040}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0, y: 0.0863, z: 0}
-  m_LocalScale: {x: 20, y: 20, z: 15}
+  m_LocalPosition: {x: 0, y: 0.0416, z: 0}
+  m_LocalScale: {x: 10, y: 10, z: 7.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2503766403170378962}
@@ -109,8 +109,8 @@ Transform:
   m_GameObject: {fileID: 4796990379144235610}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.082, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.0388, z: 0}
+  m_LocalScale: {x: 10, y: 10, z: 7.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2503766403170378962}
@@ -128,8 +128,7 @@ GameObject:
   - component: {fileID: 4706916743166430331}
   - component: {fileID: 5500264649687049692}
   - component: {fileID: 8541857817724082692}
-  - component: {fileID: 4236000525312917547}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: LowerBun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -168,6 +167,7 @@ MonoBehaviour:
   topSnapTransform: {fileID: 7892232165182796241}
   ingridientName: LowerBun
   isPrepared: 1
+  ingridientPrefab: {fileID: 0}
 --- !u!54 &4706916743166430331
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -194,7 +194,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!65 &5500264649687049692
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -214,8 +214,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.41323298, y: 0.08920173, z: 0.40111744}
-  m_Center: {x: 0.000000029802322, y: -0.043667726, z: -0.0017981753}
+  m_Size: {x: 0.1742883, y: 0.04080456, z: 0.17102261}
+  m_Center: {x: -0.00088493526, y: 0.021109058, z: -0.00356815}
 --- !u!114 &8541857817724082692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -320,13 +320,13 @@ MonoBehaviour:
       m_Calls: []
   m_AttachTransform: {fileID: 0}
   m_SecondaryAttachTransform: {fileID: 0}
-  m_UseDynamicAttach: 0
+  m_UseDynamicAttach: 1
   m_MatchAttachPosition: 1
   m_MatchAttachRotation: 1
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
@@ -339,7 +339,7 @@ MonoBehaviour:
   m_SmoothRotation: 0
   m_SmoothRotationAmount: 8
   m_TightenRotation: 0.1
-  m_TrackScale: 1
+  m_TrackScale: 0
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
@@ -363,29 +363,8 @@ MonoBehaviour:
   m_ThrowVelocityScale: 1.5
   m_ThrowAngularVelocityScale: 1
   m_ForceGravityOnDetach: 0
-  m_RetainTransformParent: 1
+  m_RetainTransformParent: 0
   m_AttachPointCompatibilityMode: 0
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
---- !u!114 &4236000525312917547
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6105103833489398628}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 3926372290
-  InScenePlacedSourceGlobalObjectIdHash: 0
-  AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
-  SpawnWithObservers: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1

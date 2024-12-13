@@ -277,7 +277,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: -0.004529953, y: 0.52999973, z: 0.00030517578}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalScale: {x: 10, y: 10, z: 7.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6430464602569248661}
@@ -1804,7 +1804,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: -0.004529953, y: 0.53199923, z: 0.00030517578}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalScale: {x: 10, y: 10, z: 7.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8652160122236243740}
@@ -2171,7 +2171,7 @@ Transform:
   m_GameObject: {fileID: 6918340182319965472}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.489, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2193,6 +2193,7 @@ MonoBehaviour:
   topSnapTransform: {fileID: 6430464602569248661}
   ingridientName: LowerBun
   isPrepared: 0
+  ingridientPrefab: {fileID: 0}
 --- !u!54 &6323661197904888487
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2239,8 +2240,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 0
   serializedVersion: 3
-  m_Size: {x: 1.9654846, y: 0.591604, z: 2.0085144}
-  m_Center: {x: 0.011720657, y: 0.2441971, z: 0.0010299683}
+  m_Size: {x: 0.18281707, y: 0.040604353, z: 0.18264523}
+  m_Center: {x: -0.0039627403, y: 0.5101775, z: -0.00053682923}
 --- !u!114 &1624043874284386608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3171,7 +3172,7 @@ Transform:
   m_GameObject: {fileID: 8831384114386989698}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.49199998, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3193,6 +3194,7 @@ MonoBehaviour:
   topSnapTransform: {fileID: 3948357513690529986}
   ingridientName: UpperBun
   isPrepared: 0
+  ingridientPrefab: {fileID: 0}
 --- !u!54 &7920495737507678081
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3239,8 +3241,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 0
   serializedVersion: 3
-  m_Size: {x: 2.0097446, y: 0.8785645, z: 2.0137024}
-  m_Center: {x: 0.0048303604, y: 0.94597256, z: -0.019798279}
+  m_Size: {x: 0.18479027, y: 0.057724, z: 0.18243194}
+  m_Center: {x: -0.0049244836, y: 0.56114244, z: 0.00027278066}
 --- !u!114 &4133625490794021209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3476,8 +3478,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.15, z: 0.2}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1586503391276423830}
   - {fileID: 3021566691685013387}
@@ -3509,7 +3511,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!65 &6418330316979066975
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3529,8 +3531,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.8659496, y: 1.9128817, z: 1.8935394}
-  m_Center: {x: -0.034365654, y: 0.45644033, z: 0.0063705444}
+  m_Size: {x: 0.18499586, y: 0.097066686, z: 0.18443128}
+  m_Center: {x: -0.0043405294, y: 0.05084508, z: -0.00023964047}
 --- !u!114 &8142016038534522920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3650,13 +3652,13 @@ MonoBehaviour:
       m_Calls: []
   m_AttachTransform: {fileID: 0}
   m_SecondaryAttachTransform: {fileID: 0}
-  m_UseDynamicAttach: 0
+  m_UseDynamicAttach: 1
   m_MatchAttachPosition: 1
   m_MatchAttachRotation: 1
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
