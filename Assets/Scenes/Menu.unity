@@ -266,6 +266,39 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 61307604}
   m_CullTransparentMesh: 1
+--- !u!114 &226007416 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8201474897224383758, guid: 73d90d10bca76b649b0959d4e84c046e, type: 3}
+  m_PrefabInstance: {fileID: 2082502028}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &275756807 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5180702043814558584, guid: 73d90d10bca76b649b0959d4e84c046e, type: 3}
+  m_PrefabInstance: {fileID: 2082502028}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &301732794 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3125667199206069301, guid: 73d90d10bca76b649b0959d4e84c046e, type: 3}
+  m_PrefabInstance: {fileID: 2082502028}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da0c512f12947e489f739169773d7ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &373745412
 GameObject:
   m_ObjectHideFlags: 0
@@ -724,7 +757,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6541973476216487463, guid: 73d90d10bca76b649b0959d4e84c046e, type: 3}
     m_RemovedGameObjects:
     - {fileID: 6844300265065329021, guid: 73d90d10bca76b649b0959d4e84c046e, type: 3}
     m_AddedGameObjects:
@@ -881,6 +915,7 @@ GameObject:
   - component: {fileID: 77027701997135763}
   - component: {fileID: 9222027114969394365}
   - component: {fileID: 4563254415019180005}
+  - component: {fileID: 9222027114969394366}
   m_Layer: 0
   m_Name: NetworkManager
   m_TagString: Untagged
@@ -929,6 +964,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ProtocolType: 0
+  m_UseWebSockets: 0
+  m_UseEncryption: 0
   m_MaxPacketQueueSize: 128
   m_MaxPayloadSize: 6144
   m_HeartbeatTimeoutMS: 500
@@ -943,6 +980,21 @@ MonoBehaviour:
     PacketDelayMS: 0
     PacketJitterMS: 0
     PacketDropRate: 0
+--- !u!114 &9222027114969394366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2167475598015629105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b6cfd1222a474d4ebf1f13b2471fe73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hostButton: {fileID: 275756807}
+  joinButton: {fileID: 226007416}
+  inputField: {fileID: 301732794}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
