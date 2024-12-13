@@ -60,16 +60,21 @@ public class Breakable : NetworkBehaviour
                     }
             }
             for( int i = 0; i < gameObject.transform.childCount; i++){
-                NetworkObject NO = gameObject.transform.GetChild(i).GetComponent<NetworkObject>();
-                if(NO == null){
-                    NO.TrySetParent((Transform)null);
+                NetworkObject NO = gameObject.transform.GetChild(0).GetComponent<NetworkObject>();
+                if(NO != null && IsServer){
+                    Debug.Log("break");
+                    NO.TryRemoveParent();
                 }
                 else{
-                    gameObject.transform.GetChild(i).SetParent(null);
+                    if(IsServer){
+                        Debug.Log(gameObject.transform.GetChild(i).name);
+                        gameObject.transform.GetChild(i).SetParent(null);
+                    }
                 }
             }
             if (breakSound != null){
                 AudioSource.PlayClipAtPoint(breakSound, transform.position);
+                Debug.Log("dzwiek");
             }
             if(IsServer){
                 gameObject.GetComponent<NetworkObject>().Despawn();
