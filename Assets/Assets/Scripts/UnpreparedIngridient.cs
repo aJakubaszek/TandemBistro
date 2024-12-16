@@ -20,6 +20,7 @@ public class UnpreparedIngridient : MonoBehaviour
         }
 
         if(cutStates.Count < 1 && cutPieces.Count < 1){
+            Debug.Log("cut");
             foreach(Transform ing in gameObject.transform){
                 Ingridient ingridient = ing.GetComponent<Ingridient>();
                 if(ingridient != null){
