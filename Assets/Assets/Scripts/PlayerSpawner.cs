@@ -1,7 +1,7 @@
 using Unity.Netcode;
 using UnityEngine;
 
-public class CustomPlayerSpawner : MonoBehaviour
+public class PlayerSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject playerPrefab;
 
@@ -25,8 +25,7 @@ public class CustomPlayerSpawner : MonoBehaviour
         if (!NetworkManager.Singleton.IsServer)
             return;
 
-        //Vector3 spawnPosition = new Vector3(Random.Range(0f, 0f), 0, Random.Range(0f, 0f));
-        Vector3 spawnPosition = new Vector3(Random.Range(7f, 7f), 0, Random.Range(0f, 0f));
+        Vector3 spawnPosition = new Vector3(7f, 0, 0f);
         Quaternion spawnRotation = Quaternion.identity;
 
         GameObject playerInstance = Instantiate(playerPrefab, spawnPosition, spawnRotation);
@@ -35,6 +34,11 @@ public class CustomPlayerSpawner : MonoBehaviour
         NetworkObject networkObject = playerInstance.GetComponent<NetworkObject>();
         if (networkObject != null){
             networkObject.SpawnAsPlayerObject(clientId); 
+            playerInstance.transform.position = spawnPosition;
+            Debug.Log("Player spawned");
+        }
+        else{
+            Debug.Log("Network object not found");
         }
     }
 }
