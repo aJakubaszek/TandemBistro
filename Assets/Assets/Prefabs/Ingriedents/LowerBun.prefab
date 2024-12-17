@@ -129,8 +129,8 @@ GameObject:
   - component: {fileID: 5500264649687049692}
   - component: {fileID: 8541857817724082692}
   - component: {fileID: 1120326020231152984}
-  - component: {fileID: 1478194241632251854}
-  - component: {fileID: -3836165540461805744}
+  - component: {fileID: 8753542239064117016}
+  - component: {fileID: -8048269054045631950}
   m_Layer: 0
   m_Name: LowerBun
   m_TagString: Untagged
@@ -392,7 +392,7 @@ MonoBehaviour:
   SpawnWithObservers: 1
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
---- !u!114 &1478194241632251854
+--- !u!114 &8753542239064117016
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -401,7 +401,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6105103833489398628}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
+  m_Script: {fileID: 11500000, guid: df2868252ab5c4d1da357e8f11f1b524, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   UseUnreliableDeltas: 0
@@ -423,7 +423,7 @@ MonoBehaviour:
   InLocalSpace: 1
   Interpolate: 1
   SlerpPosition: 0
---- !u!114 &-3836165540461805744
+--- !u!114 &-8048269054045631950
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

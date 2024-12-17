@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 8142016038534522920}
   - component: {fileID: 7771309800415234655}
   - component: {fileID: 8896771107747834285}
-  - component: {fileID: -6131029673917611615}
-  - component: {fileID: 4270051786000966673}
+  - component: {fileID: -4162912784325172841}
+  - component: {fileID: 7408960558379737238}
   m_Layer: 0
   m_Name: Bun
   m_TagString: Untagged
@@ -267,7 +267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 25110483
+  GlobalObjectIdHash: 1835433001
   InScenePlacedSourceGlobalObjectIdHash: 0
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -276,7 +276,7 @@ MonoBehaviour:
   SpawnWithObservers: 1
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
---- !u!114 &-6131029673917611615
+--- !u!114 &-4162912784325172841
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -285,7 +285,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8970912605358452400}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
+  m_Script: {fileID: 11500000, guid: df2868252ab5c4d1da357e8f11f1b524, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   UseUnreliableDeltas: 0
@@ -307,7 +307,7 @@ MonoBehaviour:
   InLocalSpace: 1
   Interpolate: 1
   SlerpPosition: 0
---- !u!114 &4270051786000966673
+--- !u!114 &7408960558379737238
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -333,7 +333,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5968413861901861039, guid: ec9b623c0c6882a4ca329eb49e5d7069, type: 3}
       propertyPath: GlobalObjectIdHash
-      value: 25110483
+      value: 3715648671
       objectReference: {fileID: 0}
     - target: {fileID: 9216344071779115301, guid: ec9b623c0c6882a4ca329eb49e5d7069, type: 3}
       propertyPath: m_LocalPosition.x
@@ -399,7 +399,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6885521131882108592, guid: 4d32bbdd6c4d69e48b677c20ad7b03bb, type: 3}
       propertyPath: GlobalObjectIdHash
-      value: 25110483
+      value: 2883984734
       objectReference: {fileID: 0}
     - target: {fileID: 8593643250424710298, guid: 4d32bbdd6c4d69e48b677c20ad7b03bb, type: 3}
       propertyPath: m_LocalPosition.x

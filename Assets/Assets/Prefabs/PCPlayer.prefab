@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 8248224821234611306}
   - component: {fileID: 5560218402671585547}
   m_Layer: 6
-  m_Name: Test player
+  m_Name: PCPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

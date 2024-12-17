@@ -1010,8 +1010,8 @@ GameObject:
   - component: {fileID: 7291578663159000643}
   - component: {fileID: -9068053456254322034}
   - component: {fileID: -4854744304935882480}
-  - component: {fileID: 3436673565168972028}
-  - component: {fileID: -8149801024583607521}
+  - component: {fileID: 7080990246454992947}
+  - component: {fileID: -1228060404691692658}
   m_Layer: 0
   m_Name: UpperBun
   m_TagString: Untagged
@@ -1273,7 +1273,7 @@ MonoBehaviour:
   SpawnWithObservers: 1
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
---- !u!114 &3436673565168972028
+--- !u!114 &7080990246454992947
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1282,7 +1282,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5119838309452023347}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
+  m_Script: {fileID: 11500000, guid: df2868252ab5c4d1da357e8f11f1b524, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   UseUnreliableDeltas: 0
@@ -1304,7 +1304,7 @@ MonoBehaviour:
   InLocalSpace: 1
   Interpolate: 1
   SlerpPosition: 0
---- !u!114 &-8149801024583607521
+--- !u!114 &-1228060404691692658
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
