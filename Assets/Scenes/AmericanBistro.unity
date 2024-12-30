@@ -3980,6 +3980,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2291444442554537595, guid: 85ee6f7aec1cca84784461dd6cac4201, type: 3}
+      propertyPath: spawnPoint
+      value: 
+      objectReference: {fileID: 608538889}
     - target: {fileID: 2353544841097640542, guid: 85ee6f7aec1cca84784461dd6cac4201, type: 3}
       propertyPath: m_Name
       value: Managers
