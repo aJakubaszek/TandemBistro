@@ -646,6 +646,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startButton: {fileID: 61307608}
   playerPrefab: {fileID: 546804011220833460, guid: 51119a20a285e43438f3fbd9be18ba88, type: 3}
+  vrPrefab: {fileID: 128444471991700322, guid: ba2c9f8b01ac09e4b9356513910ccf2b, type: 3}
 --- !u!4 &1316699447
 Transform:
   m_ObjectHideFlags: 0
@@ -964,8 +965,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ProtocolType: 1
-  m_UseWebSockets: 0
-  m_UseEncryption: 0
   m_MaxPacketQueueSize: 128
   m_MaxPayloadSize: 6144
   m_HeartbeatTimeoutMS: 500
