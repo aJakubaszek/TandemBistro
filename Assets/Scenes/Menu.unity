@@ -2480,7 +2480,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f51b3ff43d585e4aaf4bde6d9ec9fe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startButton: {fileID: 61307608}
+  startButton: {fileID: 1342183648}
   playerPrefab: {fileID: 546804011220833460, guid: 51119a20a285e43438f3fbd9be18ba88, type: 3}
   vrPrefab: {fileID: 128444471991700322, guid: ba2c9f8b01ac09e4b9356513910ccf2b, type: 3}
 --- !u!4 &1316699447
@@ -3548,7 +3548,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1963267094633941331, guid: 73d90d10bca76b649b0959d4e84c046e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3589022994186784511, guid: 73d90d10bca76b649b0959d4e84c046e, type: 3}
       propertyPath: m_PresetInfoIsWorld
