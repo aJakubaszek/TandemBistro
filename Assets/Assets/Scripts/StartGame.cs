@@ -5,12 +5,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.XR;
+using TMPro;
 
 public class StartGame : NetworkBehaviour
 {
     [SerializeField] Button startButton;
     [SerializeField] GameObject playerPrefab;
     [SerializeField] GameObject vrPrefab;
+    [SerializeField] TextMeshProUGUI PcorVR;
 
     [SerializeField] private Dictionary<ulong, string> playerTypes = new Dictionary<ulong, string>();
 
@@ -51,6 +53,7 @@ public class StartGame : NetworkBehaviour
         if (!playerTypes.ContainsKey(clientId)) {
             playerTypes.Add(clientId, type);
             Debug.Log(type);
+            PcorVR.text = type;
         }
     }
 
