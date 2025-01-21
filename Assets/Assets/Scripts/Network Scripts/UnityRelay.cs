@@ -14,6 +14,7 @@ public class UnityRelay : MonoBehaviour
     [SerializeField] Button hostButton; //Zrobić jakieś DontDestroyOnLoad i ręcznie zarządzać spawnowaniem
     [SerializeField] Button joinButton;
     [SerializeField] TMP_InputField inputField;
+    [SerializeField] TextMeshProUGUI codeOutput;
     private async void Start(){
         await UnityServices.InitializeAsync();
 
@@ -36,6 +37,7 @@ public class UnityRelay : MonoBehaviour
 
         string joinCode = await RelayService.Instance.GetJoinCodeAsync(allocation.AllocationId);
         Debug.Log(joinCode);
+        codeOutput.text = "Joining Relay with " + joinCode;
 
         NetworkManager.Singleton.GetComponent<UnityTransport>().SetHostRelayData(
             allocation.RelayServer.IpV4,
@@ -61,8 +63,7 @@ public class UnityRelay : MonoBehaviour
         try{
             string joinCode = inputField.text;
             Debug.Log("Joining Relay with "+ joinCode);
-            JoinAllocation joinAllocation = await RelayService.Instance.JoinAllocationAsync(joinCode);
-
+            JoinAllocation joinAllocation = await RelayService.Instance.JoinAllocationAsync(joinCode);            
             NetworkManager.Singleton.GetComponent<UnityTransport>().SetClientRelayData(
                 joinAllocation.RelayServer.IpV4,
                 (ushort)joinAllocation.RelayServer.Port,
