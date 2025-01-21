@@ -634,6 +634,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4589814086065684496, guid: ba2c9f8b01ac09e4b9356513910ccf2b, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3302658827
+      objectReference: {fileID: 0}
     - target: {fileID: 5590244426371400462, guid: ba2c9f8b01ac09e4b9356513910ccf2b, type: 3}
       propertyPath: m_Model
       value: 
