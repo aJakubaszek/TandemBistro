@@ -1414,7 +1414,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!81 &436142103
 AudioListener:
   m_ObjectHideFlags: 0
@@ -2066,6 +2066,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3355471162862595281, guid: 685ce52796fbc95498fcd673e1d7fe66, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4613168002789326861, guid: 685ce52796fbc95498fcd673e1d7fe66, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -2620,7 +2624,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f51b3ff43d585e4aaf4bde6d9ec9fe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startButton: {fileID: 1342183648}
+  startButton: {fileID: 61307608}
   playerPrefab: {fileID: 546804011220833460, guid: 51119a20a285e43438f3fbd9be18ba88, type: 3}
   vrPrefab: {fileID: 1234895027}
   PcorVR: {fileID: 866127326}
