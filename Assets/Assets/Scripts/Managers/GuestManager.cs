@@ -20,11 +20,9 @@ public class GuestManager : NetworkBehaviour{
     }
 
     private void Start(){
-        if(!IsServer){return;}
+        if(!IsServer){gameObject.SetActive(false);}
         for(int i = 0; i <initialPoolSize; i++){
-            GameObject guest = Instantiate(guestPrefab);
-            guest.SetActive(false);
-            customerPool.Enqueue(guest);
+            NewGuest();
         }
     }
 
@@ -35,8 +33,18 @@ public class GuestManager : NetworkBehaviour{
             guest.SetActive(true);
         }
         else{
-            guest = Instantiate(guestPrefab);
+            NewGuest();
+            SpawnGuest();
         }
         
     }
+
+    private void NewGuest(){
+        GameObject guest = Instantiate(guestPrefab, spawnPoint);
+        guest.GetComponent<NetworkObject>().Spawn();
+        guest.GetComponent<NPC>().spawnTransform = spawnPoint;
+        guest.SetActive(false);
+        customerPool.Enqueue(guest);
+    }
+
 }

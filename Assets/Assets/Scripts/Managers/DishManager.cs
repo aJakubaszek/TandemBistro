@@ -7,6 +7,8 @@ public class DishManager : MonoBehaviour
     public static DishManager Instance{ get; private set; }
     public List<DishData> allDishes;
 
+    
+
     private void Awake(){
         if (Instance != null && Instance != this){
             Destroy(gameObject);

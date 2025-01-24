@@ -1,49 +1,50 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class Sauce : MonoBehaviour
 {
-    // Reference to the Particle System
     public ParticleSystem ketchupParticleSystem;
 
-    // Timer interval for triggering the effect
-    public float splashInterval = 1.0f;
+    public LayerMask dishLayer;
 
-    // Flag to control the particle effect (for future XR input use)
-    private bool isTriggered = false;
+    private bool isDishTriggered = false;
+
+    private XRBaseControllerInteractor controllerInteractor;
 
     private void Start()
     {
-        // Check if the Particle System is assigned
         if (ketchupParticleSystem == null)
         {
             Debug.LogError("Ketchup Particle System is not assigned!");
             enabled = false;
             return;
         }
-
-        // Start the repeating splash effect
-        InvokeRepeating(nameof(TriggerSplash), 0f, splashInterval);
     }
-
-    private void Update()
+    private void OnSelectEntered(SelectEnterEventArgs args)
     {
-        // Placeholder for XR input to toggle isTriggered
-        // Example:
-        // isTriggered = XRInputManager.IsActivated("YourXRInputAction");
+        TriggerSplash();
     }
 
     private void TriggerSplash()
     {
-        if (isTriggered || Application.isEditor) // Ensure it's triggered every second for now
-        {
-            ketchupParticleSystem.Play();
-        }
+        if (ketchupParticleSystem.isPlaying)
+            return; // Prevent overlapping bursts
+
+        ketchupParticleSystem.Play();
+
+        isDishTriggered = false;
     }
 
-    // Optional: Method to enable or disable the effect
-    public void SetTriggered(bool value)
+    private void OnParticleCollision(GameObject other)
     {
-        isTriggered = value;
+        if (!isDishTriggered && other.TryGetComponent(out Dish dish))
+        {
+            // Call the DishFound function on the Dish object
+            //dish.DishFound();
+
+            // Ensure it triggers only once per burst
+            isDishTriggered = true;
+        }
     }
 }

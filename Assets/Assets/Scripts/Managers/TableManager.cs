@@ -6,7 +6,7 @@ public class TableManager : MonoBehaviour
 {
     public static TableManager Instance;
 
-    [SerializeField] List<Table> freeTables = new List<Table>(); //Serialize potrzebne tylko do debugu
+    [SerializeField] List<Table> freeTables = new List<Table>();
     [SerializeField] List<Table> occupiedTables = new List<Table> ();
     public Transform waitingPoint;
     void Awake(){

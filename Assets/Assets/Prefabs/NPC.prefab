@@ -200,7 +200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 3709768094
+  GlobalObjectIdHash: 4144625326
   InScenePlacedSourceGlobalObjectIdHash: 0
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -261,6 +261,7 @@ MonoBehaviour:
   eatingTime: 3
   patience: 30
   orderImage: {fileID: 3948182075438405878}
+  movement: {fileID: 2692394544428754516}
   isSeated:
     m_InternalValue: 0
   isWaiting:

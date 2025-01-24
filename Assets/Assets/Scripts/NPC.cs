@@ -12,16 +12,19 @@ public class NPC : NetworkBehaviour
 {
     [Header("Basics")]
     [SerializeField] NavMeshAgent navMeshAgent;
-    [SerializeField] Transform spawnTransform;
+    public Transform spawnTransform;
     
     public event Action OnDestinationReached;
 
     bool isWalking = false;
     
-
+    void Start(){
+        gameObject.transform.position = spawnTransform.position;
+    }
     void OnEnable(){
+        Debug.Log("enable?");
         if(spawnTransform != null){
-            gameObject.transform.position = spawnTransform.position; //need to set position in menager - change constructor in Initializer
+            gameObject.transform.position = spawnTransform.position;
         }
         Clock.SecondPassed += CheckDestination;
     }

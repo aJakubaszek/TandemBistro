@@ -11,7 +11,7 @@ public class Guest : NetworkBehaviour
     [SerializeField] float patience = 60f;
     [SerializeField] UnityEngine.UI.Image orderImage;
 
-    NPC movement;
+    public NPC movement;
     Table table;
     public NetworkVariable<bool> isSeated = new NetworkVariable<bool>(false);
     public NetworkVariable<bool> isWaiting = new NetworkVariable<bool>(false);
@@ -19,7 +19,6 @@ public class Guest : NetworkBehaviour
     DishData order = new DishData();
 
     Collider col;
-
     void Start(){
         Debug.Log("Starting2" + IsServer);
         if(!IsServer){return;}
@@ -96,11 +95,16 @@ public class Guest : NetworkBehaviour
             HideOrder();
             foreach(var player in FindObjectsOfType<Inventory>()){
                 player.TrashItemClientRpc();
-            } 
+            }
+
+            if(LevelManager.Instance == null) {return;}
+            LevelManager.Instance.NewGuestServed(100);
         }
         else{
             Debug.Log("Niepoprawne zamówienie");
             gameObject.GetComponent<Renderer>().material.color = Color.red;
+            if(LevelManager.Instance == null) {return;}
+            LevelManager.Instance.GuestLeavesUnserved();
         }
     }
 
