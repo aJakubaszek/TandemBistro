@@ -365,6 +365,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 61307604}
   m_CullTransparentMesh: 1
+--- !u!1 &71663004 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1963267094633941331, guid: 73d90d10bca76b649b0959d4e84c046e, type: 3}
+  m_PrefabInstance: {fileID: 2082502028}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &99485378
 GameObject:
   m_ObjectHideFlags: 0
@@ -2568,6 +2573,11 @@ MonoBehaviour:
   m_UIHoverExited:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &1234895027 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7123610123960031449, guid: 685ce52796fbc95498fcd673e1d7fe66, type: 3}
+  m_PrefabInstance: {fileID: 718779570}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1316699444
 GameObject:
   m_ObjectHideFlags: 0
@@ -2619,9 +2629,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f51b3ff43d585e4aaf4bde6d9ec9fe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startButton: {fileID: 61307608}
+  startButton: {fileID: 1342183648}
   playerPrefab: {fileID: 546804011220833460, guid: 51119a20a285e43438f3fbd9be18ba88, type: 3}
-  vrPrefab: {fileID: 7123610123960031449, guid: 685ce52796fbc95498fcd673e1d7fe66, type: 3}
+  vrPrefab: {fileID: 1234895027}
   PcorVR: {fileID: 866127326}
 --- !u!4 &1316699447
 Transform:
@@ -2642,11 +2652,6 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 8005646766869679872, guid: 685ce52796fbc95498fcd673e1d7fe66, type: 3}
   m_PrefabInstance: {fileID: 718779570}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1329917936 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1963267094633941331, guid: 73d90d10bca76b649b0959d4e84c046e, type: 3}
-  m_PrefabInstance: {fileID: 2082502028}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1342183645
 GameObject:
@@ -3894,7 +3899,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1329917936}
+  m_GameObject: {fileID: 71663004}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f32929dec494a174bb1f61221016b5f3, type: 3}
@@ -4065,7 +4070,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2167475598015629105}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 136be10b066090545945cb44e8614b82, type: 3}
   m_Name: 

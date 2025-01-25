@@ -83,7 +83,7 @@ public class LevelManager : NetworkBehaviour
     }
     public void NewGuestServed(int p){
         guestsServed++;
-        points += points;
+        points += p;
         if(guestsServed >= levelData.maxGuests){
             StopLevel();
             Debug.Log("Wygrana");
@@ -93,6 +93,7 @@ public class LevelManager : NetworkBehaviour
     public void GuestLeavesUnserved(){
         guestsServedPoorly++;
         if(guestsServedPoorly >= levelData.maxMadGuests){
+            StopLevel();
             Debug.Log("Przegrana");
         }
     }
