@@ -92,7 +92,7 @@ public class Guest : NetworkBehaviour
             Clock.SecondPassed -= WaitMode;
             gameObject.GetComponent<Renderer>().material.color = Color.green;
             movement.TurnOnNavmesh();
-            HideOrder();
+            HideOrderClientRpc();
             foreach(var player in FindObjectsOfType<Inventory>()){
                 player.TrashItemClientRpc();
             }
@@ -124,9 +124,9 @@ public class Guest : NetworkBehaviour
                 table.ChangeTableStatus();
                 table = null;
                 order = new DishData();
-                HideOrder();
+                HideOrderClientRpc();
             }
-            movement.OnDestinationReached += (()=> {gameObject.SetActive(false);}); //Zmienić na punkt na zewnatrz
+            movement.OnDestinationReached += ()=> {gameObject.SetActive(false);}; //Zmienić na punkt na zewnatrz
             Transform exitPoint = TableManager.Instance.GetWaitingPoint();
             movement.GoToDestination(exitPoint.position);
         }
@@ -156,7 +156,8 @@ public class Guest : NetworkBehaviour
         }
     }
 
-    void HideOrder(){
+    [ClientRpc]
+    void HideOrderClientRpc(){
         if(orderImage != null){
             orderImage.sprite = null;
             Color cc = orderImage.color;

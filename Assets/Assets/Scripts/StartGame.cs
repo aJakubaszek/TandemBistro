@@ -67,8 +67,7 @@ public class StartGame : NetworkBehaviour
 
     private void SpawnPlayer(ulong clientId) {
         if (!NetworkManager.Singleton.IsServer) return;
-
-        Vector3 spawnPosition = new Vector3(Random.Range(-1f, 1f), 0, Random.Range(-1f, 1f));
+        Vector3 spawnPosition = GameObject.Find("PCTransform").transform.position;
         Quaternion spawnRotation = Quaternion.identity;
 
         GameObject prefabToSpawn = playerTypes.ContainsKey(clientId) && playerTypes[clientId] == "VR" ? vrPrefab : playerPrefab;
