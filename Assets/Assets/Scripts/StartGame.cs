@@ -77,6 +77,9 @@ public class StartGame : NetworkBehaviour
         if (networkObject != null) {
             networkObject.SpawnAsPlayerObject(clientId);
         }
+        else{
+            Debug.LogError("Network object not found");
+        }
     }
 
     private string DetectPlayerType() {
