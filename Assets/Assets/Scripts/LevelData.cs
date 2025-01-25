@@ -10,9 +10,7 @@ public class LevelData : MonoBehaviour
     [SerializeField] public int difficultyLevel;
     [SerializeField] public int maxMadGuests;
 
-    public void Start(){
-        StartLevel();
-    }
+   
     public void StartLevel(){
         LevelManager.Instance.StartLevel(this);
     }
