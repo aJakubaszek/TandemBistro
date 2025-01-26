@@ -81,4 +81,18 @@ public class TwoSidedMeat : NetworkBehaviour
 
         updatedMaterial.color = color;
     }
+
+    public float GetModifier(){
+        float topOvercook = Mathf.Abs((topSecondsCooked.Value-cookingTime)/cookingTime);
+        float bottomOvercook = Mathf.Abs(bottomSecondsCooked.Value-cookingTime/cookingTime);
+        if(topOvercook < 0.1f){
+            topOvercook = 0;
+        }
+        if(bottomOvercook < 0.1f){
+            bottomOvercook = 0;
+        }
+
+        float overcookMean = (topOvercook + bottomOvercook)/2;
+        return 1 - overcookMean;
+    }
 }

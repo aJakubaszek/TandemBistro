@@ -89,16 +89,16 @@ public class Guest : NetworkBehaviour
         Dish givenDish = plate.GetComponent<Dish>();
         bool isCorrectOrder = Dish.AreDishesEqual(givenDish.GetData(), order);
         if(givenDish != null && isCorrectOrder){
+            if(LevelManager.Instance == null) {return;}
             Clock.SecondPassed -= WaitMode;
             gameObject.GetComponent<Renderer>().material.color = Color.green;
             movement.TurnOnNavmesh();
             HideOrderClientRpc();
+            LevelManager.Instance.NewGuestServed(RateDish(givenDish));
             foreach(var player in FindObjectsOfType<Inventory>()){
                 player.TrashItemClientRpc();
             }
-
-            if(LevelManager.Instance == null) {return;}
-            LevelManager.Instance.NewGuestServed(100);
+            
         }
         else{
             Debug.Log("Niepoprawne zamówienie");
@@ -165,5 +165,21 @@ public class Guest : NetworkBehaviour
         }
     }
 
+    private int RateDish(Dish givenDish){
+        int points = 0;
+        float multiplier = 0;
+        foreach (Transform foodTransform in givenDish.snappedIngridients){
+            GameObject foodGO = foodTransform.gameObject;
+            if(foodGO.GetComponent<Ingridient>() != null){
+                points += 10;
+            }
+            TwoSidedMeat meat = foodGO.GetComponent<TwoSidedMeat>();
+            if(meat != null){
+                points += 5;
+                multiplier += meat.GetModifier();
+            }
+        }
 
+        return (int)(points*multiplier);
+    }
 }

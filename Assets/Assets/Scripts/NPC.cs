@@ -18,9 +18,6 @@ public class NPC : NetworkBehaviour
 
     bool isWalking = false;
     
-    void Start(){
-        gameObject.transform.position = spawnTransform.position;
-    }
     void OnEnable(){
         Debug.Log("enable?");
         if(spawnTransform != null){

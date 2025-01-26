@@ -14,7 +14,7 @@ public class Dish : NetworkBehaviour{
     [SerializeField] Material ghostMaterial;
     [SerializeField] Collider snapCollider;
 
-    List<Transform> snappedIngridients = new List<Transform>();
+    public List<Transform> snappedIngridients = new List<Transform>();
     private GameObject phantomObject = null;
     
     private void OnNetworkDestroy(){
