@@ -76,7 +76,7 @@ public class Guest : NetworkBehaviour
 
         if(IsServer){
             isSeated.Value = true;
-            order = DishManager.Instance.GetRandomDish();
+            order = DishManager.Instance.GetRandomDish(LevelManager.Instance.GetDifficulty());
             Clock.SecondPassed += WaitMode;
             DisplayOrderClientRpc(order.dishImageID);
         }
@@ -84,7 +84,7 @@ public class Guest : NetworkBehaviour
     }
 
     [ServerRpc(RequireOwnership = false)] 
-    public void GiveOrderServerRpc(ulong networkId){//adding points
+    public void GiveOrderServerRpc(ulong networkId){
         NetworkObject plate = NetworkManager.Singleton.SpawnManager.SpawnedObjects[networkId];
         Dish givenDish = plate.GetComponent<Dish>();
         bool isCorrectOrder = Dish.AreDishesEqual(givenDish.GetData(), order);

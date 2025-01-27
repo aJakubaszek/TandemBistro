@@ -104,4 +104,9 @@ public class LevelManager : NetworkBehaviour
             screenCounter.text = levelTime.ToString();
         }
     }
+
+    public int GetDifficulty(){
+        if(levelData == null){return 1;}
+        return levelData.difficultyLevel;
+    }
 }

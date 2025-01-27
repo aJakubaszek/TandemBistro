@@ -213,6 +213,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 37562eff5613076448b79158df90a338, type: 3}
       insertIndex: -1
       addedObject: {fileID: -5915253500516609093}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 37562eff5613076448b79158df90a338, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4025282632932879436}
   m_SourcePrefab: {fileID: 100100000, guid: 37562eff5613076448b79158df90a338, type: 3}
 --- !u!4 &1504406004641608012 stripped
 Transform:
@@ -436,7 +439,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 4280599611
+  GlobalObjectIdHash: 2458534244
   InScenePlacedSourceGlobalObjectIdHash: 0
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -463,3 +466,34 @@ MonoBehaviour:
   - {fileID: 919132149155446097, guid: 0ff998e47bc938843addf8b4744f2b6f, type: 3}
   - {fileID: 919132149155446097, guid: 7505afb274579634dbf4ee6f6f8136de, type: 3}
   cutPieces: {fileID: 5098269602787315187, guid: 7ad37c57f3ea63247a26634944a18fbd, type: 3}
+--- !u!114 &4025282632932879436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2282034076952095734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UseUnreliableDeltas: 0
+  SyncPositionX: 1
+  SyncPositionY: 1
+  SyncPositionZ: 1
+  SyncRotAngleX: 1
+  SyncRotAngleY: 1
+  SyncRotAngleZ: 1
+  SyncScaleX: 1
+  SyncScaleY: 1
+  SyncScaleZ: 1
+  PositionThreshold: 0.001
+  RotAngleThreshold: 0.01
+  ScaleThreshold: 0.01
+  UseQuaternionSynchronization: 0
+  UseQuaternionCompression: 0
+  UseHalfFloatPrecision: 0
+  InLocalSpace: 0
+  Interpolate: 1
+  SlerpPosition: 0
