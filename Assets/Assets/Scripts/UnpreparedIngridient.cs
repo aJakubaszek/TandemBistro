@@ -5,6 +5,7 @@ using Unity.Netcode;
 using Unity.XR.CoreUtils;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class UnpreparedIngridient : NetworkBehaviour
 {
@@ -53,6 +54,7 @@ public class UnpreparedIngridient : NetworkBehaviour
                     rb.useGravity = true;
                     ing.gameObject.GetComponent<BoxCollider>().enabled = true;
                     ingridient.SetPrepared(true);
+                    ing.GetComponent<XRGrabInteractable>().enabled = true;
                 }
             }
         gameObject.transform.DetachChildren();

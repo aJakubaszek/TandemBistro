@@ -5,7 +5,6 @@ using UnityEngine;
 public class SpriteManager : MonoBehaviour
 {
     public static SpriteManager Instance{get; private set;}
-
     [SerializeField] List<Sprite> sprites = new List<Sprite>();
     private void Awake(){
         if (Instance != null && Instance != this){

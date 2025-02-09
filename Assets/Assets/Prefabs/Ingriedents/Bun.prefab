@@ -331,6 +331,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LowerBun (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3157837187190005747, guid: ec9b623c0c6882a4ca329eb49e5d7069, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5968413861901861039, guid: ec9b623c0c6882a4ca329eb49e5d7069, type: 3}
       propertyPath: GlobalObjectIdHash
       value: 3715648671
@@ -400,6 +404,10 @@ PrefabInstance:
     - target: {fileID: 6885521131882108592, guid: 4d32bbdd6c4d69e48b677c20ad7b03bb, type: 3}
       propertyPath: GlobalObjectIdHash
       value: 2883984734
+      objectReference: {fileID: 0}
+    - target: {fileID: 6992399544541535534, guid: 4d32bbdd6c4d69e48b677c20ad7b03bb, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8593643250424710298, guid: 4d32bbdd6c4d69e48b677c20ad7b03bb, type: 3}
       propertyPath: m_LocalPosition.x
