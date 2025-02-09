@@ -14,4 +14,8 @@ public class LevelData : MonoBehaviour
     public void StartLevel(){
         LevelManager.Instance.StartLevel(this);
     }
+
+    public void Start() {
+        //StartLevel();
+    }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class DishManager : MonoBehaviour
 {
     public static DishManager Instance{ get; private set; }
-    private List<DishData> allDishes;
+    [SerializeField] List<DishData> allDishes;
 
     
 

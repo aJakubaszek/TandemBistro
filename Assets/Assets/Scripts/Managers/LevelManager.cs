@@ -23,6 +23,10 @@ public class LevelManager : NetworkBehaviour
     [SerializeField] float currentChance = 0;
     [SerializeField] float randomValue = 0;
    [SerializeField]  int levelTime = 0;
+    [SerializeField] TextMeshProUGUI pointsUI;
+    [SerializeField] TextMeshProUGUI levelTimeUI;
+    [SerializeField] TextMeshProUGUI pointsUIVR;
+    [SerializeField] TextMeshProUGUI levelTimeUIVR;
 
 
     void Awake(){
@@ -84,7 +88,13 @@ public class LevelManager : NetworkBehaviour
     public void NewGuestServed(int p){
         guestsServed++;
         points += p;
-        if(guestsServed >= levelData.maxGuests){
+        if (pointsUI != null) {
+            pointsUI.text = "Points: " + points;
+        }
+        if (pointsUIVR != null) {
+            pointsUIVR.text = "Points: " + points;
+        }
+        if (guestsServed >= levelData.maxGuests){
             StopLevel();
             Debug.Log("Wygrana");
         }
@@ -99,6 +109,12 @@ public class LevelManager : NetworkBehaviour
     }
     public void IncrementCounter(){
         levelTime++;
+        if (levelTimeUI != null) {
+            levelTimeUI.text = "Time: " + levelTime;
+        }
+        if (levelTimeUIVR != null) {
+            levelTimeUIVR.text = "Time: " + levelTime;
+        }
         timeFromLastGuest++;
         if(screenCounter != null){
             screenCounter.text = levelTime.ToString();
