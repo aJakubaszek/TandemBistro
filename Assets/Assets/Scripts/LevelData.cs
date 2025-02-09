@@ -16,6 +16,6 @@ public class LevelData : MonoBehaviour
     }
 
     public void Start() {
-        //StartLevel();
+        StartLevel();
     }
 }
