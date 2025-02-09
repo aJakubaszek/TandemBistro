@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 1835433001
+  GlobalObjectIdHash: 25110483
   InScenePlacedSourceGlobalObjectIdHash: 0
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -335,9 +335,13 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5322053585279150649, guid: ec9b623c0c6882a4ca329eb49e5d7069, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5968413861901861039, guid: ec9b623c0c6882a4ca329eb49e5d7069, type: 3}
       propertyPath: GlobalObjectIdHash
-      value: 3715648671
+      value: 25110483
       objectReference: {fileID: 0}
     - target: {fileID: 9216344071779115301, guid: ec9b623c0c6882a4ca329eb49e5d7069, type: 3}
       propertyPath: m_LocalPosition.x
@@ -401,9 +405,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: UpperBun (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5521333280511252316, guid: 4d32bbdd6c4d69e48b677c20ad7b03bb, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6885521131882108592, guid: 4d32bbdd6c4d69e48b677c20ad7b03bb, type: 3}
       propertyPath: GlobalObjectIdHash
-      value: 2883984734
+      value: 25110483
       objectReference: {fileID: 0}
     - target: {fileID: 6992399544541535534, guid: 4d32bbdd6c4d69e48b677c20ad7b03bb, type: 3}
       propertyPath: m_Enabled
