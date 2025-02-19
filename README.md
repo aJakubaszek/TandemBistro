@@ -7,3 +7,5 @@ Most important libraries:
 - ParrelSync, lets you open more than one instances of Unity for debugging in multiplayer
 
 Game is functional, but needs further level design, difficulty wasn't set up yet. All API keys were revoked, connection in current network transport (Unity Relay) is not possible without connecting Unity Project and setting up Relay.
+
+[Simple showcase](https://www.youtube.com/watch?v=Ivzgy1N_BXk)
